@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 import static java.lang.Thread.sleep;
@@ -7,12 +8,28 @@ public class Elevator implements Runnable{
 
     private final Scheduler scheduler;
     private final int id;
+    private int currentFloor;
     private Random random = new Random();
     private TaskData taskData;
+    private ArrayList<DestinationButton> destinationButtonList;
+    private Motor motor;
 
-    public Elevator(Scheduler scheduler, int id){
+    /**
+     *
+     * @param scheduler reference to the scheduler
+     * @param id unique id for the elevator
+     * @param numOfFloors number of floors in simulation
+     */
+    public Elevator(Scheduler scheduler, int id, int numOfFloors){
         this.scheduler = scheduler;
         this.id = id;
+        currentFloor = 1;
+        // initialize all destination buttons for elevator
+        for(int i = 1; i <= numOfFloors; i++){
+            destinationButtonList.add(new DestinationButton(i));
+        }
+        motor = new Motor();
+
     }
 
     /**
@@ -47,6 +64,14 @@ public class Elevator implements Runnable{
 
     }
 
-
+    /**
+     * moves to specified floor
+     * @param floorNum the number of the destination floor
+     * @author Saad Sheikh
+     */
+    protected void moveToFloor(int floorNum){
+        int floorDiff = Math.abs(currentFloor - floorNum);
+        motor.moveToFloor(floorDiff);
+    }
 
 }

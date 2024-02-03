@@ -16,9 +16,9 @@ public class Main {
 
         Scheduler scheduler = new Scheduler();
         Floor floor = new Floor(scheduler, taskList);
-        Elevator elevator = new Elevator(scheduler, 1);
-        Elevator elevator2 = new Elevator(scheduler, 2);
-        Elevator elevator3 = new Elevator(scheduler, 3);
+        Elevator elevator = new Elevator(scheduler, 1, 5);
+        Elevator elevator2 = new Elevator(scheduler, 2, 5);
+        Elevator elevator3 = new Elevator(scheduler, 3, 5);
 
         scheduler.setFloor(floor);
 
