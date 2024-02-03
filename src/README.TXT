@@ -8,6 +8,7 @@ FILE NAMES:
     - Motor
     - Scheduler
     - TaskData
+    - TestClass
 
 TO RUN:
     - add a csv file with the name "ElevatorCallSheet - Sheet1.csv" to the src folder with the following format:

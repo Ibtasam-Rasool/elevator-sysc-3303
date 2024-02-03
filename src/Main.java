@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         CSVReader CSVR = new CSVReader();
-        ArrayList<TaskData> taskList = CSVR.parser();
+        ArrayList<TaskData> taskList = CSVR.parser("src\\ElevatorCallSheet - Sheet1.csv");
 
         Scheduler scheduler = new Scheduler();
         Floor floor = new Floor(scheduler, taskList);

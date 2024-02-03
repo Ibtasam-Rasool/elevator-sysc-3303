@@ -10,16 +10,15 @@ public class CSVReader {
      * @return taskList, the tasklist formed from the csv file
      * @author Quinton Tracey
      */
-    public ArrayList<TaskData> parser(){
+    public ArrayList<TaskData> parser(String fileLocation){
 
-        String file = "src\\ElevatorCallSheet - Sheet1.csv";
         BufferedReader reader = null;
         String line = "";
 
         ArrayList<TaskData> taskList = new ArrayList<>();
 
         try {
-            reader = new BufferedReader(new FileReader(file));
+            reader = new BufferedReader(new FileReader(fileLocation));
 
             //skipping over the colomn names
             reader.readLine();
