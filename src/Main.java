@@ -1,18 +1,9 @@
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        TaskData task1 = new TaskData(2, new Date(), 3, "UP");
-        TaskData task2 = new TaskData(3, new Date(), 4, "DOWN");
-        TaskData task3 = new TaskData(4, new Date(), 1, "UP");
-        TaskData task4 = new TaskData(5, new Date(), 5, "DOWN");
-
-        ArrayList<TaskData> taskList = new ArrayList();
-        taskList.add(task1);
-        taskList.add(task2);
-        taskList.add(task3);
-        taskList.add(task4);
+        CSVReader CSVR = new CSVReader();
+        ArrayList<TaskData> taskList = CSVR.parser();
 
         Scheduler scheduler = new Scheduler();
         Floor floor = new Floor(scheduler, taskList);

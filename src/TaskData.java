@@ -6,11 +6,11 @@ import java.util.Date;
 public class TaskData {
 
     private int floor;
-    private Date time;
+    private String time;
     private int elevatorNumber;
     private String button;
 
-    public TaskData(int floor, Date time, int elevatorNumber, String button) {
+    public TaskData(String time, int floor, String button, int elevatorNumber) {
         this.floor = floor;
         this.time = time;
         this.elevatorNumber = elevatorNumber;
@@ -25,11 +25,11 @@ public class TaskData {
         this.floor = floor;
     }
 
-    public Date getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
