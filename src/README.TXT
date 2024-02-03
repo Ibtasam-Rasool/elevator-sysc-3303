@@ -1,10 +1,21 @@
+FILE NAMES:
+    - ButtonLamp
+    - CSVReader
+    - DestinationButton
+    - Elevator
+    - Floor
+    - Main
+    - Motor
+    - Scheduler
+    - TaskData
+
 TO RUN:
-    - add a csv file with the following format:
+    - add a csv file with the name "ElevatorCallSheet - Sheet1.csv" to the src folder with the following format:
 
     Time,Floor,Floor Button,Car Button
     hh:mm:ss.mmm,n,Up/Down,n
 
-    Followed by the values in rows below it.
+    Followed by the values in rows below it ordered by time
     Example CSV file:
 
     Time,Floor,Floor Button,Car Button
