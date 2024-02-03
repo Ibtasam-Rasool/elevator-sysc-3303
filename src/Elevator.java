@@ -25,6 +25,7 @@ public class Elevator implements Runnable{
         this.id = id;
         currentFloor = 1;
         // initialize all destination buttons for elevator
+        destinationButtonList = new ArrayList<DestinationButton>();
         for(int i = 1; i <= numOfFloors; i++){
             destinationButtonList.add(new DestinationButton(i));
         }
