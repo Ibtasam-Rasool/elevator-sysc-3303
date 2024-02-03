@@ -12,6 +12,7 @@ public class Elevator implements Runnable{
     private Random random = new Random();
     private TaskData taskData;
     private ArrayList<DestinationButton> destinationButtonList;
+    private Door elevatordoor;
     private Motor motor;
 
     /**
@@ -24,6 +25,7 @@ public class Elevator implements Runnable{
         this.scheduler = scheduler;
         this.id = id;
         currentFloor = 1;
+        elevatordoor = new Door(id);
         // initialize all destination buttons for elevator
         destinationButtonList = new ArrayList<DestinationButton>();
         for(int i = 1; i <= numOfFloors; i++){
