@@ -10,6 +10,7 @@ ___
   - Prerequisites
   - Setup
   - Usage
+- To Do
 - Credits
 
 ## Description
@@ -49,6 +50,12 @@ First, open your terminal and go to the src directory. Then do the following:
 ```javac Main.java```
 2. Run the program:
 ```java Main```
+
+## To Do
+We don't yet have a stop condition, so the main method continues to run even after all tasks are processed.
+
+In future iterations, we plan to implement a stop condition after a certain amount of time has passed.
+We also plan to fully make use of class TaskData in future iterations, and may modify TaskData by changing Floor Button type to boolean.
 
 ## Credits
 ___
