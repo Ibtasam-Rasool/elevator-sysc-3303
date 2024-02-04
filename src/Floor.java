@@ -46,4 +46,12 @@ public class Floor implements Runnable{
     public void messageChannel(String message) {
         System.out.println("THE FLOOR HAS RECEIVED THE MESSAGE: " + message);
     }
+
+    /**
+     * Return currently scheduled tasks
+     *
+     * @return taskDataList - list of tasts scheduled
+     * @author: Daniel Godfrey
+     */
+    public List<TaskData> getTaskDataList() { return taskDataList; }
 }

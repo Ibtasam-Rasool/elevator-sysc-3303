@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Minor Adjustments to main and added more info to README">
-      <change afterPath="$PROJECT_DIR$/src/TestClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/CSVReaderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/SchedulerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/TaskDataTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ElevatorCallSheet - Sheet1.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/elevator-sysc-3303.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/elevator-sysc-3303.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSVReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/SynchronizationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +53,10 @@
     "Application.ExcelReader.executor": "Run",
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.CSVReaderTest.executor": "Run",
+    "JUnit.SchedulerTest.executor": "Run",
+    "JUnit.SynchronizationTest.executor": "Run",
+    "JUnit.TaskDataTest.executor": "Run",
     "JUnit.TestClass.CSVReaderTest.executor": "Run",
     "JUnit.TestClass.test.executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -60,7 +71,7 @@
     "create.test.in.the.same.root": "true",
     "git-widget-placeholder": "L1G10__milestone__1",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/qisto/OneDrive/Documents/1 Winter 2024/SYSC 3303A - Real Time Concurrent Systems/Labs/Assi 1.java",
+    "last_opened_file_path": "C:/Carleton/SYSC3303/Project/Tests",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,20 +79,30 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
+    "project.structure.side.proportion": "0.18965517",
     "settings.editor.selected.configurable": "preferences.updates",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Carleton\SYSC3303\Project\Tests" />
+      <recent name="C:\Carleton\SYSC3303\Project\src" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestClass.CSVReaderTest">
+  <component name="RunManager">
     <configuration name="ExcelReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ExcelReader" />
       <module name="elevator-sysc-3303" />
@@ -118,10 +139,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestClass.CSVReaderTest" />
-        <item itemvalue="JUnit.TestClass.test" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestClass.CSVReaderTest" />
         <item itemvalue="Application.ExcelReader" />
+        <item itemvalue="JUnit.TestClass.test" />
       </list>
     </recent_temporary>
   </component>
@@ -170,6 +191,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created CSV Reader and slightly altered the formatting of TaskData Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created CSV Reader and slightly altered the formatting of TaskData Class" />
+    <MESSAGE value="Checkout L1G10_milestone_1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checkout L1G10_milestone_1" />
   </component>
 </project>

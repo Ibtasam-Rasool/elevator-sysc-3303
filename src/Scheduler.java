@@ -78,4 +78,19 @@ public class Scheduler implements Runnable{
         this.floor = floor;
     }
 
+    /**
+     * Return task given to scheduler by floor
+     * @return scheduled task
+     */
+    public TaskData getTask() {
+        return task;
+    }
+
+    /**
+     * Return whether a task is availible
+     * @return true is a task is availible, false otherwise
+     */
+    public Boolean doesHaveTask() {
+        return haveTask;
+    }
 }

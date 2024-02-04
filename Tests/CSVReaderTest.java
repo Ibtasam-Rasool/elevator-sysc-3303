@@ -1,13 +1,26 @@
-import org.junit.Assert;
+import junit.framework.Assert;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-class TestClass {
+import static org.junit.jupiter.api.Assertions.*;
 
-    @org.junit.jupiter.api.Test
-    void CSVReaderTest() {
-        CSVReader CSVR = new CSVReader();
-        ArrayList<TaskData> taskList = CSVR.parser("src\\ElevatorCallSheetTESTFILE - Sheet1.csv");
+class CSVReaderTest {
+    CSVReader CSVR;
+    @BeforeEach
+    void setUp() {
+        CSVR = new CSVReader();
+    }
+
+    @AfterEach
+    void tearDown() {
+    }
+
+    @Test
+    void parser() {
+        ArrayList<TaskData> taskList = CSVR.parser("src\\ElevatorCallSheet - Sheet1.csv");
 
         ArrayList<TaskData> correctTaskList = new ArrayList<>();
         correctTaskList.add(new TaskData("14:05:15", 2, "Up", 4));
@@ -22,8 +35,5 @@ class TestClass {
             Assert.assertEquals(correctTaskList.get(i).getElevatorNumber(),taskList.get(i).getElevatorNumber());
 
         }
-
-
-
     }
 }
