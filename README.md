@@ -24,10 +24,10 @@ the number number of elevators, the time it takes to open and close the doors, a
 between floors. These values are stored in a CSV file located in src.
 
 ### UML Class Diagram
-![UML Class](/UML Class Diagram.png)
+![UML Class](/UML%20Class%20Diagram.png)
 
 ### UML Sequence Diagram
-![UML Sequence](/UML Sequence Diagram.png)
+![UML Sequence](/UML%20Sequence%20Diagram.png)
 
 ## Geting Started
 ___
