@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Added getters to Scheduler and Floor, added test directory, added sample CSV file to src, modified CSVReaderTest, and added test classes SchedulerTest and TaskDataTest">
-      <change afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/README.TXT" beforeDir="false" />
+    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Minor addition to README file; to do section. Also added UML class and UML sequence diagrams">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +61,7 @@
     "create.test.in.the.same.root": "true",
     "git-widget-placeholder": "L1G10__milestone__1",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Carleton/SYSC3303/Project/Tests",
+    "last_opened_file_path": "C:/Carleton/SYSC3303/Project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,11 +76,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Carleton\SYSC3303\Project" />
       <recent name="C:\Carleton\SYSC3303\Project\Tests" />
       <recent name="C:\Carleton\SYSC3303\Project\src" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Carleton\SYSC3303\Project" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -170,7 +174,31 @@
       <option name="project" value="LOCAL" />
       <updated>1707006379846</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Replaced README file">
+      <option name="closed" value="true" />
+      <created>1707008737186</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707008737186</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Replaced README file">
+      <option name="closed" value="true" />
+      <created>1707008785308</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707008785308</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Minor addition to README file; to do section. Also added UML class and UML sequence diagrams">
+      <option name="closed" value="true" />
+      <created>1707009404283</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707009404283</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +219,8 @@
     <MESSAGE value="Created CSV Reader and slightly altered the formatting of TaskData Class" />
     <MESSAGE value="Checkout L1G10_milestone_1" />
     <MESSAGE value="Added getters to Scheduler and Floor, added test directory, added sample CSV file to src, modified CSVReaderTest, and added test classes SchedulerTest and TaskDataTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added getters to Scheduler and Floor, added test directory, added sample CSV file to src, modified CSVReaderTest, and added test classes SchedulerTest and TaskDataTest" />
+    <MESSAGE value="Replaced README file" />
+    <MESSAGE value="Minor addition to README file; to do section. Also added UML class and UML sequence diagrams" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor addition to README file; to do section. Also added UML class and UML sequence diagrams" />
   </component>
 </project>

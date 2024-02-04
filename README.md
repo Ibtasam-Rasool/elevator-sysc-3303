@@ -6,6 +6,8 @@ This repository is for the SYSC3303 Elevator Group Project.
 ## Table of Contents
 ___
 - Description
+  - UML Class Diagram
+  - UML Sequence Diagram
 - Getting started
   - Prerequisites
   - Setup
@@ -20,6 +22,12 @@ elevator controller (the Scheduler), a simulator for the elevator cars (which in
 and motors) and a simulator for the floors. The elevator controller is multi-threaded, and the simulation is configurable in terms of the number of floors,
 the number number of elevators, the time it takes to open and close the doors, and the time it takes to move
 between floors. These values are stored in a CSV file located in src.
+
+### UML Class Diagram
+![UML Class](/UML Class Diagram.png)
+
+### UML Sequence Diagram
+![UML Sequence](/UML Sequence Diagram.png)
 
 ## Geting Started
 ___
@@ -51,11 +59,13 @@ First, open your terminal and go to the src directory. Then do the following:
 2. Run the program:
 ```java Main```
 
-## To Do
+### To Do
+___
 We don't yet have a stop condition, so the main method continues to run even after all tasks are processed.
 
 In future iterations, we plan to implement a stop condition after a certain amount of time has passed.
 We also plan to fully make use of class TaskData in future iterations, and may modify TaskData by changing Floor Button type to boolean.
+
 
 ## Credits
 ___
