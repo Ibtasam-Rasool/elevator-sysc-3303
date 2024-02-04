@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Minor Adjustments to main and added more info to README">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/CSVReaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/SchedulerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/TaskDataTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ElevatorCallSheet - Sheet1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/elevator-sysc-3303.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/elevator-sysc-3303.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSVReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/SynchronizationTest.java" afterDir="false" />
+    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Added getters to Scheduler and Floor, added test directory, added sample CSV file to src, modified CSVReaderTest, and added test classes SchedulerTest and TaskDataTest">
+      <change afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/README.TXT" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706939776097</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added getters to Scheduler and Floor, added test directory, added sample CSV file to src, modified CSVReaderTest, and added test classes SchedulerTest and TaskDataTest">
+      <option name="closed" value="true" />
+      <created>1707006379846</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707006379846</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +190,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created CSV Reader and slightly altered the formatting of TaskData Class" />
     <MESSAGE value="Checkout L1G10_milestone_1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checkout L1G10_milestone_1" />
+    <MESSAGE value="Added getters to Scheduler and Floor, added test directory, added sample CSV file to src, modified CSVReaderTest, and added test classes SchedulerTest and TaskDataTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added getters to Scheduler and Floor, added test directory, added sample CSV file to src, modified CSVReaderTest, and added test classes SchedulerTest and TaskDataTest" />
   </component>
 </project>
