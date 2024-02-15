@@ -15,7 +15,7 @@ public class DestinationButton {
     }
 
     /**
-     * Function tol simulate button being pressed
+     * Function to simulate button being pressed
      * @author Saad Sheikh
      */
     public void pressButton(){
@@ -23,5 +23,13 @@ public class DestinationButton {
             pressed = true;
             buttonLamp.turnOn();
         }
+    }
+
+    /**
+     * @return the status of the current button
+     * @author Saad Sheikh
+     */
+    public boolean isPressed(){
+        return pressed;
     }
 }
