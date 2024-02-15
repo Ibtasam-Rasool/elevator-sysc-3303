@@ -1,7 +1,78 @@
+import sun.security.krb5.internal.crypto.Des;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 import static java.lang.Thread.sleep;
+
+/**
+ * interface to represent Elevator state in a state machine
+ * @author Saad Sheikh
+ */
+interface ElevatorState {
+    void selectDestination(Elevator elevator, int floor);
+    void reachedDestination(Elevator elevator);
+    void displayState();
+}
+
+/**
+ * Concrete state class representing the state when elevator is idle
+ * @author Saad Sheikh.
+ */
+class IdleState implements ElevatorState{
+    @Override
+    public void selectDestination(Elevator elevator, int floor) {
+        ArrayList<DestinationButton> buttonList = elevator.getDestinationButtonList();
+        buttonList.get(floor-1).pressButton();
+        elevator.setState(new MovingState());
+        System.out.println("Elevator has started moving.");
+    }
+
+    @Override
+    public void reachedDestination(Elevator elevator) {
+        System.out.println("Elevator has not selected destinations.");
+    }
+
+    @Override
+    public void displayState() {
+        System.out.println("Elevator is idle.");
+    }
+}
+
+/**
+ * Concrete state class representing the state when elevator is idle
+ * @author Saad Sheikh
+ */
+class MovingState implements ElevatorState{
+
+    @Override
+    public void selectDestination(Elevator elevator, int floor) {
+        ArrayList<DestinationButton> buttonList = elevator.getDestinationButtonList();
+        buttonList.get(floor-1).pressButton();
+        System.out.println("Elevator is already moving.");
+    }
+
+    @Override
+    public void reachedDestination(Elevator elevator) {
+        ArrayList<DestinationButton> buttonList = elevator.getDestinationButtonList();
+        boolean finishedAllRequests = true;
+        for(int i = 0; i < buttonList.size(); i++){
+            if(buttonList.get(i).isPressed()){
+                finishedAllRequests = false;
+                break;
+            }
+        }
+        if(finishedAllRequests){
+            System.out.println("Elevator has become idle.");
+            elevator.setState(new IdleState());
+        }
+    }
+
+    @Override
+    public void displayState() {
+        System.out.println("Elevator is moving");
+    }
+}
 
 public class Elevator implements Runnable{
 
@@ -14,6 +85,7 @@ public class Elevator implements Runnable{
     private ArrayList<DestinationButton> destinationButtonList;
     private Door elevatordoor;
     private Motor motor;
+    private ElevatorState currentState;
 
     /**
      *
@@ -56,6 +128,23 @@ public class Elevator implements Runnable{
     }
 
     /**
+     * changes the state of the elevator
+     * @param state the new state to set the elevator to
+     * @author Saad Sheikh
+     */
+    public void setState(ElevatorState state){
+        this.currentState = state;
+    }
+
+    /**
+     * @return the current state of the elevator
+     * @author Saad Sheikh
+     */
+    public ElevatorState getState(){
+        return currentState;
+    }
+
+    /**
      * sends back confirmation of having received a task
      * @param taskData Task received
      * @author Ibtasam Rasool
@@ -77,4 +166,10 @@ public class Elevator implements Runnable{
         motor.moveToFloor(floorDiff);
     }
 
+    /**
+     * @return the array of destination buttons in the elevator
+     */
+    protected ArrayList<DestinationButton> getDestinationButtonList(){
+        return destinationButtonList;
+    }
 }
