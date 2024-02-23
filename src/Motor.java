@@ -1,55 +1,78 @@
-public class Motor implements Runnable {
+import static java.lang.Thread.sleep;
+
+public class Motor {
     private volatile boolean running;
     private int floorDiff;
+    private Elevator elevator;
+    private final int TravelTime = 1000; // in milliseconds
 
     /**
      * constructor for motor
-     * @author Saad Sheikh
+     * @author Saad Sheikh, Quinton Tracey
      */
-    public Motor() {
+    public Motor(Elevator elevator) {
         running = false;
+        this.elevator = elevator;
     }
 
     /**
-     * function to simulate motor running between floors
-     * @param floorDiff number of floors between source and destination
-     * @author Saad Sheikh
+     *   moves towards the occupant's floor
+     * @param currentFloor int, the current floor of the elevator
+     * @param initialFloor int, the initial floor of the occupants
+     * @throws InterruptedException
+     * @author Quinton Tracey
      */
-    public void moveToFloor(int floorDiff) {
-        if (!running) {
-            this.floorDiff = floorDiff;
-            running = true;
-            new Thread(this).start();
-        } else {
-            System.out.println("Motor is already running");
-        }
-    }
-
-    /**
-     * run function for motor thread
-     * @author Saad Sheikh
-     */
-    @Override
-    public void run() {
-        try {
-            for (int i = 0; i < floorDiff; i++) {
-                if (!running) {
-                    break;
-                }
-                // change the time from 1 second to something else later
-                Thread.sleep(1000); // a counter for time motor will be running for (aka travel time between each floor)
+    public void moveToOccupantFloor(int currentFloor, int initialFloor)throws InterruptedException {
+        //state stuff
+        elevator.printElavatorStatus();
+        while(currentFloor != initialFloor){
+            //if destination floor is above
+            if (currentFloor < initialFloor){
+                sleep(TravelTime);
+                currentFloor += 1;
+                elevator.moveElevator("Up");
+            } //destination floorn is below
+            else  {
+                sleep(TravelTime);
+                currentFloor -= 1;
+                elevator.moveElevator("Down");
             }
-        } catch (InterruptedException e) {
-            stopMotor();
+            elevator.printElavatorStatus();
         }
+
+        System.out.println("ELEVATOR " + elevator.getId() + " is currently at floor " + currentFloor + " loading a group of occupants");
+
+        elevator.setOccupancy(elevator.getOccupancy() + 1);
     }
 
     /**
-     * function to stop motor running
-     * @author Saad Sheikh
+     *   moves towards the destination floor
+     * @param currentFloor int, the current floor of the elevator
+     * @param destinationFloor int, the destination floor
+     * @throws InterruptedException
+     * @author Quinton Tracey
      */
-    public void stopMotor() {
-        running = false;
-        System.out.println("Motor stopped.");
+    public void moveToDestinationFloor(int currentFloor, int destinationFloor) throws InterruptedException {
+        elevator.printElavatorStatus();
+        //state stuff
+        while (currentFloor != destinationFloor) {
+            //if destination floor is above
+            if (currentFloor < destinationFloor) {
+                sleep(TravelTime);
+                currentFloor += 1;
+                elevator.moveElevator("Up");
+            } //destination floorn is below
+            else {
+                sleep(TravelTime);
+                currentFloor -= 1;
+                elevator.moveElevator("Down");
+            }
+            elevator.printElavatorStatus();
+        }
+
+        System.out.println("ELEVATOR " + elevator.getId() + " is currently at floor " + currentFloor + " unloading a group of occupants");
+
+        elevator.setOccupancy(elevator.getOccupancy() - 1);
     }
+
 }

@@ -1,4 +1,3 @@
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,49 +23,49 @@ class TaskDataTest {
 
     @Test
     void getFloor() {
-        assertEquals(taskList.get(0).getFloor(), 2);
-        assertEquals(taskList.get(1).getFloor(), 4);
+        assertEquals(taskList.get(0).getInitialFloor(), 2);
+        assertEquals(taskList.get(1).getInitialFloor(), 4);
     }
 
     @Test
     void setFloor() {
-        assertEquals(taskList.get(0).getFloor(), 2);
-        taskList.get(0).setFloor(15);
-        assertEquals(taskList.get(0).getFloor(), 15);
+        assertEquals(taskList.get(0).getInitialFloor(), 2);
+        taskList.get(0).setInitialFloor(15);
+        assertEquals(taskList.get(0).getInitialFloor(), 15);
 
-        assertEquals(taskList.get(1).getFloor(), 4);
-        taskList.get(1).setFloor(0);
-        assertEquals(taskList.get(1).getFloor(), 0);
-        taskList.get(1).setFloor(-2);
-        assertEquals(taskList.get(1).getFloor(), -2);
+        assertEquals(taskList.get(1).getInitialFloor(), 4);
+        taskList.get(1).setInitialFloor(0);
+        assertEquals(taskList.get(1).getInitialFloor(), 0);
+        taskList.get(1).setInitialFloor(-2);
+        assertEquals(taskList.get(1).getInitialFloor(), -2);
         tearDown();
     }
 
     @Test
     void getTime() {
-        assertEquals(taskList.get(0).getTime(), "14:05:15");
-        assertEquals(taskList.get(1).getTime(), "15:06:05");
+        assertEquals(taskList.get(0).getTimeString(), "14:05:15");
+        assertEquals(taskList.get(1).getTimeString(), "15:06:05");
     }
 
     @Test
     void setTime() {
-        assertEquals(taskList.get(0).getTime(), "14:05:15");
-        taskList.get(0).setTime("11:11:11");
-        assertEquals(taskList.get(0).getTime(), "11:11:11");
+        assertEquals(taskList.get(0).getTimeString(), "14:05:15");
+        taskList.get(0).setTimeString("11:11:11");
+        assertEquals(taskList.get(0).getTimeString(), "11:11:11");
         tearDown();
     }
 
     @Test
     void getElevatorNumber() {
-        assertEquals(taskList.get(0).getElevatorNumber(), 4);
-        assertEquals(taskList.get(1).getElevatorNumber(), 1);
+        assertEquals(taskList.get(0).getDestinationFloor(), 4);
+        assertEquals(taskList.get(1).getDestinationFloor(), 1);
     }
 
     @Test
     void setElevatorNumber() {
-        assertEquals(taskList.get(0).getElevatorNumber(), 4);
-        taskList.get(0).setElevatorNumber(10);
-        assertEquals(taskList.get(0).getElevatorNumber(), 10);
+        assertEquals(taskList.get(0).getDestinationFloor(), 4);
+        taskList.get(0).setDestinationFloor(10);
+        assertEquals(taskList.get(0).getDestinationFloor(), 10);
         tearDown();
     }
 

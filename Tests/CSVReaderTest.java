@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class CSVReaderTest {
     CSVReader CSVR;
     @BeforeEach
@@ -20,7 +18,7 @@ class CSVReaderTest {
 
     @Test
     void parser() {
-        ArrayList<TaskData> taskList = CSVR.parser("src\\ElevatorCallSheet - Sheet1.csv");
+        ArrayList<TaskData> taskList = CSVR.parser("src\\ElevatorCallSheetTESTFILE - Sheet1.csv");
 
         ArrayList<TaskData> correctTaskList = new ArrayList<>();
         correctTaskList.add(new TaskData("14:05:15", 2, "Up", 4));
@@ -29,10 +27,10 @@ class CSVReaderTest {
         correctTaskList.add(new TaskData("22:25:55", 3, "Down", 2));
 
         for (int i = 0; i < correctTaskList.toArray().length; i++){
-            Assert.assertEquals(correctTaskList.get(i).getTime(),taskList.get(i).getTime());
-            Assert.assertEquals(correctTaskList.get(i).getFloor(),taskList.get(i).getFloor());
+            Assert.assertEquals(correctTaskList.get(i).getTimeString(),taskList.get(i).getTimeString());
+            Assert.assertEquals(correctTaskList.get(i).getInitialFloor(),taskList.get(i).getInitialFloor());
             Assert.assertEquals(correctTaskList.get(i).getButton(),taskList.get(i).getButton());
-            Assert.assertEquals(correctTaskList.get(i).getElevatorNumber(),taskList.get(i).getElevatorNumber());
+            Assert.assertEquals(correctTaskList.get(i).getDestinationFloor(),taskList.get(i).getDestinationFloor());
 
         }
     }

@@ -4,10 +4,12 @@ public class Scheduler implements Runnable{
     private Floor floor;
     private TaskData task;
     private Boolean haveTask;
+    private int systemClock;
 
     public Scheduler (){
         task = null;
         haveTask = false;
+        systemClock = 0;
     }
 
     /**

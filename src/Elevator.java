@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 
 import static java.lang.Thread.sleep;
@@ -17,7 +18,7 @@ interface ElevatorState {
  * Concrete state class representing the state when elevator is idle
  * @author Saad Sheikh.
  */
-class IdleState implements ElevatorState{
+class ElevatorIdleState implements ElevatorState{
     @Override
     public void selectDestination(Elevator elevator, int floor) {
         ArrayList<DestinationButton> buttonList = elevator.getDestinationButtonList();
@@ -62,7 +63,7 @@ class MovingState implements ElevatorState{
         }
         if(finishedAllRequests){
             System.out.println("Elevator has become idle.");
-            elevator.setState(new IdleState());
+            elevator.setState(new ElevatorIdleState());
         }
     }
 
@@ -84,6 +85,11 @@ public class Elevator implements Runnable{
     private Door elevatordoor;
     private Motor motor;
     private ElevatorState currentState;
+    private int occupancy;
+
+    private final int TravelTime = 1000; // in milliseconds
+    private final int LoadingTime = 2000; // in milliseconds
+    private final int DeLoadingTime = 2000; // in milliseconds
 
     /**
      *
@@ -101,25 +107,41 @@ public class Elevator implements Runnable{
         for(int i = 1; i <= numOfFloors; i++){
             destinationButtonList.add(new DestinationButton(i));
         }
-        motor = new Motor();
+        occupancy = 0;
+        motor = new Motor(this);
 
     }
 
     /**
      * Runs this operation.
-     * @author Ibtasam Rasool
+     * @author Ibtasam Rasool, Quinton Tracey
      */
     @Override
     public void run() {
         while(true){
-
-            try {
-                sleep(random.nextInt(1000, 3000));
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
             taskData = scheduler.acquireTask();
             acknowledgeTask(taskData);
+
+            System.out.println("------Start Of Task------");
+            //while the elevator has a task
+            while(Objects.nonNull(taskData)){
+                try {
+                    //move to occupants if needed
+                    motor.moveToOccupantFloor(currentFloor, taskData.getInitialFloor());
+                    //load occupants
+                    sleep(LoadingTime);
+                    //move to destination
+                    motor.moveToDestinationFloor(currentFloor, taskData.getDestinationFloor());
+                    //unload occupants
+                    sleep(DeLoadingTime);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
+                taskData = null;
+            }
+
+            System.out.println("------End Of Task------");
 
         }
 
@@ -155,19 +177,53 @@ public class Elevator implements Runnable{
     }
 
     /**
-     * moves to specified floor
-     * @param floorNum the number of the destination floor
-     * @author Saad Sheikh
-     */
-    protected void moveToFloor(int floorNum){
-        int floorDiff = Math.abs(currentFloor - floorNum);
-        motor.moveToFloor(floorDiff);
-    }
-
-    /**
      * @return the array of destination buttons in the elevator
      */
     protected ArrayList<DestinationButton> getDestinationButtonList(){
         return destinationButtonList;
     }
+
+    /**
+     * Sets the number of occupants
+     * @param occupants int, the number of occupants
+     */
+    public void setOccupancy(int occupants){
+        this.occupancy = occupants;
+    }
+
+    /**
+     * Returns the number of groups in the elevator
+     * @return int, the number of occupant groups
+     */
+    public int getOccupancy(){
+        return occupancy;
+    }
+
+    /**
+     *  prints out the elevators current floor and contents
+     */
+    public void printElavatorStatus(){
+        System.out.println("ELEVATOR " + id + " is currently at floor " + currentFloor + " with " + occupancy + " group(s)");
+    }
+
+    /**
+     * returns the id of the elevator
+     * @return int, id of the elevator
+     */
+    public int getId(){
+        return id;
+    }
+
+    /**
+     * Moves the elevator in the specified direction
+     * @param direction String, the direction 'Up' or 'Down' that the elevator is being moved
+     */
+    public void moveElevator(String direction){
+        if(direction.equals("Up")){
+            currentFloor+=1;
+        } else if(direction.equals("Down")){
+            currentFloor-=1;
+        }
+    }
+
 }

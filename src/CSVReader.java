@@ -27,7 +27,6 @@ public class CSVReader {
 
             // go over each line
             while((line = reader.readLine()) != null){
-
                 ArrayList temp = new ArrayList();
                 String[] row = line.split(",");
 
@@ -41,8 +40,15 @@ public class CSVReader {
                         temp.add(cell);
                     }
                 }
+
+                int hours = (Integer) Integer.parseInt(temp.get(0).toString().substring(0,2));
+                int minutes = (Integer) Integer.parseInt(temp.get(0).toString().substring(3,5));
+                int seconds = (Integer) Integer.parseInt(temp.get(0).toString().substring(6,8));
+
+                int timeAfterStart = hours * 60 * 60 + minutes * 60 + seconds;
+
                 // adding new tasks to task list
-                taskList.add(new TaskData((String) temp.get(0), (Integer) temp.get(1), (String) temp.get(2), (Integer) temp.get(3)));
+                taskList.add(new TaskData(timeAfterStart, (Integer) temp.get(1), (String) temp.get(2), (Integer) temp.get(3)));
             }
         } catch (Exception e){
 
