@@ -86,6 +86,7 @@ public class Elevator implements Runnable{
     private Motor motor;
     private ElevatorState currentState;
     private int occupancy;
+    private boolean runFlag;
 
     private final int TravelTime = 1000; // in milliseconds
     private final int LoadingTime = 2000; // in milliseconds
@@ -107,8 +108,10 @@ public class Elevator implements Runnable{
         for(int i = 1; i <= numOfFloors; i++){
             destinationButtonList.add(new DestinationButton(i));
         }
+        this.setState(new ElevatorIdleState());
         occupancy = 0;
         motor = new Motor(this);
+        runFlag = true;
 
     }
 
@@ -118,7 +121,7 @@ public class Elevator implements Runnable{
      */
     @Override
     public void run() {
-        while(true){
+        while(runFlag){
             taskData = scheduler.acquireTask();
             acknowledgeTask(taskData);
 
@@ -127,6 +130,7 @@ public class Elevator implements Runnable{
             while(Objects.nonNull(taskData)){
                 try {
                     //move to occupants if needed
+                    this.setState(new MovingState());
                     motor.moveToOccupantFloor(currentFloor, taskData.getInitialFloor());
                     //load occupants
                     sleep(LoadingTime);
@@ -140,6 +144,8 @@ public class Elevator implements Runnable{
 
                 taskData = null;
             }
+
+            this.setState(new ElevatorIdleState());
 
             System.out.println("------End Of Task------");
 
@@ -224,6 +230,10 @@ public class Elevator implements Runnable{
         } else if(direction.equals("Down")){
             currentFloor-=1;
         }
+    }
+
+    public void stopRunning(){
+        runFlag = false;
     }
 
 }
