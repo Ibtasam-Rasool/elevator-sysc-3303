@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Changed CVSReader parser to accept a files location, and added a test class including a test for CSVReader">
-      <change afterPath="$PROJECT_DIR$/src/SchedulerAcquireTaskState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SchedulerIdleState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SchedulerState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SchedulerWaitingForElevatorState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/SchedulerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/SchedulerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SchedulerAcquireTaskState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SchedulerIdleState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SchedulerState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SchedulerWaitingForElevatorState.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +115,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.SchedulerTest.schedulerPath1">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="elevator-sysc-3303" />
@@ -131,30 +131,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TaskDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SchedulerTest.schedulerPath1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="elevator-sysc-3303" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TaskDataTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestClass.CSVReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="elevator-sysc-3303" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestClass" />
-      <option name="METHOD_NAME" value="CSVReaderTest" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
+      <option name="METHOD_NAME" value="schedulerPath1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestClass.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SchedulerTest.schedulerPath2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="elevator-sysc-3303" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestClass" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
+      <option name="METHOD_NAME" value="schedulerPath2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulerTest.schedulerPath3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elevator-sysc-3303" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
+      <option name="METHOD_NAME" value="schedulerPath3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -162,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SchedulerTest.schedulerPath1" />
+        <item itemvalue="JUnit.SchedulerTest.schedulerPath3" />
+        <item itemvalue="JUnit.SchedulerTest.schedulerPath2" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in elevator-sysc-3303" />
-        <item itemvalue="JUnit.TaskDataTest" />
-        <item itemvalue="JUnit.TestClass.CSVReaderTest" />
-        <item itemvalue="JUnit.TestClass.test" />
       </list>
     </recent_temporary>
   </component>
@@ -188,7 +189,7 @@
       <workItem from="1706854750219" duration="6742000" />
       <workItem from="1706917351910" duration="8852000" />
       <workItem from="1708750026411" duration="868000" />
-      <workItem from="1708751265493" duration="16240000" />
+      <workItem from="1708751265493" duration="30023000" />
     </task>
     <task id="LOCAL-00001" summary="Created CSV Reader and slightly altered the formatting of TaskData Class">
       <option name="closed" value="true" />

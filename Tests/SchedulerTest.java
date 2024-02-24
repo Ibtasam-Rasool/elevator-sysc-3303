@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -43,5 +44,48 @@ class SchedulerTest {
         assertTrue(scheduler.doesHaveTask());
         tearDown();
     }
+
+    @Test
+    void schedulerPath1(){
+        scheduler.displayCurrentState(scheduler);
+        scheduler.elevatorArrived(scheduler);
+        scheduler.displayCurrentState(scheduler);
+        scheduler.schedulerElevatorFoundState(scheduler);
+        scheduler.displayCurrentState(scheduler);
+        scheduler.finishedElevatorInteraction(scheduler);
+        scheduler.displayCurrentState(scheduler);
+        assertTrue(scheduler.getState() instanceof SchedulerWaitingState);
+
+    }
+
+    @Test
+    void schedulerPath2(){
+        scheduler.displayCurrentState(scheduler);
+        scheduler.elevatorRequested(scheduler);
+        scheduler.displayCurrentState(scheduler);
+        assertTrue(scheduler.getState() instanceof SchedulerFindElevatorState);
+        scheduler.elevatorArrived(scheduler);
+        assertFalse(scheduler.getState() instanceof ElevatorArrivedHandlerState);
+        scheduler.schedulerElevatorFoundState(scheduler);
+        scheduler.displayCurrentState(scheduler);
+        scheduler.finishedElevatorInteraction(scheduler);
+        scheduler.displayCurrentState(scheduler);
+        assertTrue(scheduler.getState() instanceof SchedulerWaitingState);
+
+    }
+
+    @Test
+    void schedulerPath3(){
+        scheduler.displayCurrentState(scheduler);
+        scheduler.schedulerElevatorFoundState(scheduler);
+        scheduler.displayCurrentState(scheduler);
+        assertTrue(scheduler.getState() instanceof SchedulerSendRequestToElevatorState);
+        scheduler.finishedElevatorInteraction(scheduler);
+        scheduler.displayCurrentState(scheduler);
+        assertTrue(scheduler.getState() instanceof SchedulerWaitingState);
+    }
+
+
+
 
 }
