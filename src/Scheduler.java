@@ -1,12 +1,15 @@
+import java.lang.reflect.Type;
+
 public class Scheduler implements Runnable{
 
-
+    private SchedulerState state;
     private Floor floor;
     private TaskData task;
     private Boolean haveTask;
     private int systemClock;
 
     public Scheduler (){
+        this.state = new SchedulerIdleState();
         task = null;
         haveTask = false;
         systemClock = 0;
@@ -20,6 +23,9 @@ public class Scheduler implements Runnable{
 
         while (true){
 
+            systemClock++;
+
+
         }
 
     }
@@ -32,11 +38,13 @@ public class Scheduler implements Runnable{
     synchronized public TaskData acquireTask() {
         while (!haveTask){
             try {
+                state.nextState(this);
                 wait();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
+        state.nextState(this);
         haveTask = false;
         notifyAll();
         return task;
@@ -55,6 +63,11 @@ public class Scheduler implements Runnable{
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+        }
+        if(!(state instanceof SchedulerAcquireTaskState)){
+            state = new SchedulerWaitingForElevatorState();
+        }else {
+            state.nextState(this);
         }
         this.task = task;
         haveTask = true;
@@ -94,5 +107,19 @@ public class Scheduler implements Runnable{
      */
     public Boolean doesHaveTask() {
         return haveTask;
+    }
+
+    /**
+     * @return schedulers state
+     */
+    public SchedulerState getState(){
+        return state;
+    }
+
+    /**
+     * @return schedulers state
+     */
+    public void setState(SchedulerState state){
+        this.state = state;
     }
 }
