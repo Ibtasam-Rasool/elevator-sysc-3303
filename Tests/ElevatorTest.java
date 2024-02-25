@@ -75,7 +75,7 @@ class ElevatorTest {
         long startCheckingTime = System.currentTimeMillis();
 
         while(System.currentTimeMillis() - startCheckingTime < checkPeriod){
-            if(!(elevator.getState() instanceof ElevatorIdleState)){
+            if(!(elevator.getState() instanceof ElevatorIdleState) && !(elevator.getState() instanceof ElevatorLoadingtState) && !(elevator.getState() instanceof ElevatorDeLoadingtState)){
                 elevatorState = elevator.getState();
             }
 
@@ -85,7 +85,6 @@ class ElevatorTest {
                 throw new RuntimeException(e);
             }
         }
-
         // checking that elevator did change state, and went back to idle after completing task
         assertTrue(elevatorState instanceof MovingState, "Elevator did not change state to MovingState when it was running");
         assertTrue(elevator.getState() instanceof ElevatorIdleState, "Elevator did not revert back to IdleState when it had no more tasks");

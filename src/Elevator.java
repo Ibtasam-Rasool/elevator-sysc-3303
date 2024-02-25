@@ -187,6 +187,7 @@ public class Elevator implements Runnable{
                     this.setState(new ElevatorLoadingtState());
                     sleep(LoadingTime);
                     //move to destination
+                    this.setState(new MovingState());
                     motor.moveToDestinationFloor(currentFloor, taskData.getDestinationFloor());
                     //unload occupants
                     this.setState(new ElevatorDeLoadingtState());
