@@ -8,6 +8,8 @@ ___
 - Description
   - UML Class Diagram
   - UML Sequence Diagram
+  - Elevator State Diagram
+  - Scheduler State Diagram
 - Getting started
   - Prerequisites
   - Setup
@@ -24,10 +26,16 @@ the number number of elevators, the time it takes to open and close the doors, a
 between floors. These values are stored in a CSV file located in src.
 
 ### UML Class Diagram
-![UML Class](/UML%20Class%20Diagram.png)
+![UML Class](Diagrams/UML%20Class%20Diagram%20Milestone1.png)
 
 ### UML Sequence Diagram
-![UML Sequence](/UML%20Sequence%20Diagram.png)
+![UML Sequence](Diagrams/UML%20Sequence%20Diagram%20Milestone1.png)
+
+### Elevator State Diagram
+![Elevator State](Diagrams/Elevator_State_Diagram.png)
+
+### Scheduler State Diagram
+![Scheduler State](Diagrams/Scheduler_State_Diagram.png)
 
 ## Geting Started
 ___
@@ -53,19 +61,31 @@ Add tasks to the csv file with the name "ElevatorCallSheet - Sheet1.csv" in the 
     22:25:55,3,Down,2
 
 ### Usage
-First, open your terminal and go to the src directory. Then do the following:
-1. Compile the Java program:
-```javac Main.java```
+First, open your terminal and navigate to the project's root directory. Then do the following:
+1. Compile all Java files:
+
+```javac -d out -cp src src/**/*.java```
+
 2. Run the program:
+
 ```java Main```
 
 ### To Do
 ___
-We don't yet have a stop condition, so the main method continues to run even after all tasks are processed.
+Modify state machines in Elevator and Scheduler.
 
-In future iterations, we plan to implement a stop condition after a certain amount of time has passed.
-We also plan to fully make use of class TaskData in future iterations, and may modify TaskData by changing Floor Button type to boolean.
+Add queues to Elevator and Schduler.
 
+Implement algorithm to manage elevator tasks with two or more elevators:
+- One elevator should wait (start) at the bottom, and the other elevator should wait (start) at the top. For now, we will just implement one elevator that starts at the bottom floor.
+- Group tasks with the same direction into a sub-queue in the scheduler. The scheduler maintains two seperate sub-queues - one for each direction.
+- The elevator closest to the head of a sub-queue gets assigned the sub-queue in its own seperate elevator task queue. The sub-queue for that direction in the scheduler gets cleared.
+- The elevator stops at all requested floors and destination floors along the way.
+- New tasks can be added to the elevator's queue from the scheduler if the floor making the request is between the elevator's current location and the tail, and the request is in the same direction that the elevator is travelling. Otherwise, every new task will be put in the appropriate sub-queue.
+- The elevator moves in one direction until all tasks in its own queue are serviced.
+- When all tasks in the elevator's queue are serviced, notify the scheduler, and accept the scheduler's new sub-queue with closest head. If there are no more sub-queues, the elevator returns to its start position and notifies the scheduler of its state.
+
+The algorithm should optimize throughput if more than two cars are used by changing how tasks are classified and dispatched in the scheduler.
 
 ## Credits
 ___
