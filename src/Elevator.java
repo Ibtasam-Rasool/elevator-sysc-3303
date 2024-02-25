@@ -73,6 +73,57 @@ class MovingState implements ElevatorState{
     }
 }
 
+/**
+ * Concrete state class representing the state when customers are loading.
+ * @author Quinton Tracey.
+ */
+class ElevatorLoadingtState implements ElevatorState{
+    @Override
+    public void selectDestination(Elevator elevator, int floor) {
+        ArrayList<DestinationButton> buttonList = elevator.getDestinationButtonList();
+        buttonList.get(floor-1).pressButton();
+        elevator.setState(new MovingState());
+        System.out.println("Elevator has started moving.");
+    }
+
+    @Override
+    public void reachedDestination(Elevator elevator) {
+        System.out.println("Elevator has selected destinations.");
+    }
+
+    @Override
+    public void displayState() {
+        System.out.println("Elevator is currently loading Customers");
+    }
+}
+
+/**
+ * Concrete state class representing the state when customers are deloading.
+ * @author Quinton Tracey.
+ */
+class ElevatorDeLoadingtState implements ElevatorState{
+    @Override
+    public void selectDestination(Elevator elevator, int floor) {
+        ArrayList<DestinationButton> buttonList = elevator.getDestinationButtonList();
+        buttonList.get(floor-1).pressButton();
+        elevator.setState(new ElevatorIdleState());
+        System.out.println("Elevator has started moving.");
+    }
+
+    @Override
+    public void reachedDestination(Elevator elevator) {
+        System.out.println("Elevator has reached a selected destination");
+    }
+
+    @Override
+    public void displayState() {
+        System.out.println("Elevator is currently unloading Customers");
+    }
+}
+
+
+
+
 public class Elevator implements Runnable{
 
 
@@ -133,10 +184,12 @@ public class Elevator implements Runnable{
                     this.setState(new MovingState());
                     motor.moveToOccupantFloor(currentFloor, taskData.getInitialFloor());
                     //load occupants
+                    this.setState(new ElevatorLoadingtState());
                     sleep(LoadingTime);
                     //move to destination
                     motor.moveToDestinationFloor(currentFloor, taskData.getDestinationFloor());
                     //unload occupants
+                    this.setState(new ElevatorDeLoadingtState());
                     sleep(DeLoadingTime);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
