@@ -6,7 +6,7 @@ public class Main {
         ArrayList<TaskData> taskList = CSVR.parser("src\\ElevatorCallSheet - Sheet1.csv");
         Scheduler scheduler = new Scheduler();
         Floor floor = new Floor(scheduler, taskList);
-        Elevator elevator1 = new Elevator(scheduler, 1, 5);
+        Elevator elevator1 = new Elevator(0, scheduler, 1, 5);
         //Elevator elevator2 = new Elevator(scheduler, 2, 5);
         //Elevator elevator3 = new Elevator(scheduler, 3, 5);
 

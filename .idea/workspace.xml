@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Changed CVSReader parser to accept a files location, and added a test class including a test for CSVReader">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/SchedulerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/SchedulerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchedulerAcquireTaskState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchedulerIdleState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchedulerState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SchedulerWaitingForElevatorState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/ElevatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/ElevatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,43 +54,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ExcelReader.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.All in elevator-sysc-3303.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CSVReaderTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SchedulerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SynchronizationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TaskDataTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestClass.CSVReaderTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestClass.test.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;L1G10__milestone__2&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ibtas/Desktop/Sysc 3303/elevator-sysc-3303&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.18965517&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ExcelReader.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.All in elevator-sysc-3303.executor": "Run",
+    "JUnit.CSVReaderTest.executor": "Run",
+    "JUnit.SchedulerTest.executor": "Run",
+    "JUnit.SynchronizationTest.executor": "Run",
+    "JUnit.TaskDataTest.executor": "Run",
+    "JUnit.TestClass.CSVReaderTest.executor": "Run",
+    "JUnit.TestClass.test.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "L1G10__Daniels__modifications__milestone__2",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ibtas/Desktop/Sysc 3303/elevator-sysc-3303",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.18965517",
+    "settings.editor.selected.configurable": "configurable.group.language",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Carleton\SYSC3303\Project" />
@@ -115,7 +113,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SchedulerTest.schedulerPath1">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="elevator-sysc-3303" />
@@ -131,31 +129,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchedulerTest.schedulerPath1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TaskDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="elevator-sysc-3303" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
-      <option name="METHOD_NAME" value="schedulerPath1" />
+      <option name="MAIN_CLASS_NAME" value="TaskDataTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestClass.CSVReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elevator-sysc-3303" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestClass" />
+      <option name="METHOD_NAME" value="CSVReaderTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchedulerTest.schedulerPath2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestClass.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="elevator-sysc-3303" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
-      <option name="METHOD_NAME" value="schedulerPath2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SchedulerTest.schedulerPath3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="elevator-sysc-3303" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
-      <option name="METHOD_NAME" value="schedulerPath3" />
+      <option name="MAIN_CLASS_NAME" value="TestClass" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -163,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SchedulerTest.schedulerPath1" />
-        <item itemvalue="JUnit.SchedulerTest.schedulerPath3" />
-        <item itemvalue="JUnit.SchedulerTest.schedulerPath2" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in elevator-sysc-3303" />
+        <item itemvalue="JUnit.TaskDataTest" />
+        <item itemvalue="JUnit.TestClass.CSVReaderTest" />
+        <item itemvalue="JUnit.TestClass.test" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +186,7 @@
       <workItem from="1706854750219" duration="6742000" />
       <workItem from="1706917351910" duration="8852000" />
       <workItem from="1708750026411" duration="868000" />
-      <workItem from="1708751265493" duration="30023000" />
+      <workItem from="1708751265493" duration="16240000" />
     </task>
     <task id="LOCAL-00001" summary="Created CSV Reader and slightly altered the formatting of TaskData Class">
       <option name="closed" value="true" />

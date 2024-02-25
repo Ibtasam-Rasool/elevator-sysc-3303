@@ -34,7 +34,8 @@ ___
 ### Prerequisites
 Ensure that you have Java installed on your system.
 The test classes for this project use JUnit 5.
-JUnit 5 requires Java 8 (or higher) at runtime. 
+
+JUnit 5 requires Java 8 (or higher) at runtime. Our project uses SDK 21.
 
 ### Setup
 Add tasks to the csv file with the name "ElevatorCallSheet - Sheet1.csv" in the src folder with the following format:
