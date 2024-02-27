@@ -3,6 +3,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.jar.JarOutputStream;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SchedulerTest {
@@ -48,12 +50,21 @@ class SchedulerTest {
     @Test
     void schedulerPath1(){
         scheduler.displayCurrentState(scheduler);
+
+        System.out.println("EVENT: ELEVATOR HAS ARRIVED AT A FLOOR");
         scheduler.elevatorArrived(scheduler);
         scheduler.displayCurrentState(scheduler);
+        System.out.println("(Opening Elevator Doors STATE)");
+
+        System.out.println("EVENT: Close Door Button pressed or 30 sec wait");
         scheduler.schedulerElevatorFoundState(scheduler);
         scheduler.displayCurrentState(scheduler);
+        System.out.println("(CLOSING THE DOOR STATE)");
+
+        System.out.println("EVENT: CLOSED DOORS (Elevator Interaction occurred)");
         scheduler.finishedElevatorInteraction(scheduler);
         scheduler.displayCurrentState(scheduler);
+
         assertTrue(scheduler.getState() instanceof SchedulerWaitingState);
 
     }

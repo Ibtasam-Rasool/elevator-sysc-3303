@@ -89,4 +89,17 @@ class ElevatorTest {
         assertTrue(elevatorState instanceof MovingState, "Elevator did not change state to MovingState when it was running");
         assertTrue(elevator.getState() instanceof ElevatorIdleState, "Elevator did not revert back to IdleState when it had no more tasks");
     }
+
+    @Test
+    void elevatorStateTest(){
+        elevator.displayState();
+        System.out.println("EVENT: elevator prompted to select destination");
+        elevator.selectDestination();
+        elevator.displayState();
+        System.out.println("EVENT: elevator reached destination");
+        elevator.reachedDestination();
+
+        assertTrue(elevator.getState() instanceof MovingState);
+
+    }
 }

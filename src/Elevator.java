@@ -290,4 +290,16 @@ public class Elevator implements Runnable{
         runFlag = false;
     }
 
+    public  void selectDestination(){
+        currentState.selectDestination(this, this.currentFloor);
+    }
+
+    public void reachedDestination(){
+        currentState.reachedDestination(this);
+    }
+
+    public void displayState(){
+        currentState.displayState();
+    }
+
 }
