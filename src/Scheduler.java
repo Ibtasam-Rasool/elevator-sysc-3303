@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 interface SchedulerState {
 
     /**
@@ -260,6 +262,8 @@ public class Scheduler implements Runnable, SchedulerState{
     private TaskData task;
     private Boolean haveTask;
     private int systemClock;
+    private LinkedList<TaskData> upTaskQueue = new LinkedList<>();
+    private LinkedList<TaskData> downTaskQueue = new LinkedList<>();
 
     public Scheduler (){
         this.state = new SchedulerWaitingState();
@@ -286,9 +290,13 @@ public class Scheduler implements Runnable, SchedulerState{
     /**
      * Used by elevator to acquire a task
      * @return the current task being handled
-     * @author Ibtasam Rasool
+     * @author Ibtasam Rasool, Daniel Godfrey
      */
     synchronized public TaskData acquireTask() {
+        //Basically, elevator will call this when it's done its task. Then the new subqueue gets returned.
+        //if an empty subqueue gets returned, elevator should move back to start position (state), and then go to idle state
+        //If sub-queue gets filled (from 0 to 1+), then change the elevator state to running
+
         while (!haveTask){
             try {
                 wait();
@@ -302,24 +310,19 @@ public class Scheduler implements Runnable, SchedulerState{
 
     }
 
+
     /**
      * Takes in a task from the floor
      * @param task task received from floor
-     * @author Ibtasam Rasool
+     * @author Ibtasam Rasool, Daniel Godfrey
      */
     synchronized public void giveTask(TaskData task){
-        while (haveTask){
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        this.task = task;
-        haveTask = true;
+        //basically, if it's up, put it in the up queue, if it's down, put it in the down queue
+        this.schedulerTaskQueue.add(task);
+        //haveTask = true;
         notifyAll();
-
     }
+
 
     /**
      * sends message to floor
