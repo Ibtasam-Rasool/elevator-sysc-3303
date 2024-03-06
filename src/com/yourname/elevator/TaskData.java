@@ -1,6 +1,7 @@
 /**
  * Repersents the task data sent by the floor and received by elevator
  */
+package com.yourname.elevator;
 public class TaskData {
 
     private int initialFloor;
@@ -14,6 +15,7 @@ public class TaskData {
         this.destinationFloor = destinationFloor;
         this.button = button;
     }
+
 
     public TaskData(String time, int floor, String button, int elevatorNumber) {
         this.initialFloor = floor;
@@ -100,6 +102,7 @@ public class TaskData {
     public void setButton(String button) {
         this.button = button;
     }
+    
 
 
     @Override
