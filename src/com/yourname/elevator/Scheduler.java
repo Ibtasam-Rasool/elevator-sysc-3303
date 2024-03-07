@@ -10,7 +10,7 @@ import java.util.Map;
 public class Scheduler implements Runnable {
     enum State {
         IDLE,
-        REQUESTING_ELEVATOR
+        SCHEDULING
     }
     private DatagramSocket socket;
     private State state;
@@ -35,26 +35,40 @@ public class Scheduler implements Runnable {
          */
         while (true) {
             try {
-                if (!tasks.isEmpty()) {
-                    assignTasksIfPossible();
-                }
-
-                DatagramPacket packet = new DatagramPacket(buf, buf.length);
-                socket.receive(packet);
-                String received = new String(packet.getData(), 0, packet.getLength()).trim();
-                System.out.println("Scheduler received: " + received);
-
-                if (received.contains("available")) {
-                    String[] parts = received.split(" ");
-                    int elevatorId = Integer.parseInt(parts[1]);
-                    int elevatorFloor = Integer.parseInt(parts[5]);
-                    availableElevators.put(elevatorId, new ElevatorStatus(elevatorId, packet.getAddress(), packet.getPort(), elevatorFloor));
-                    assignTasksIfPossible();
+                switch (state){
+                    case IDLE:
+                        waitForEvents();
+                        break;
+                    case SCHEDULING:
+                        assignTasksIfPossible();
+                        break;
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    private void waitForEvents() throws Exception {
+        DatagramPacket packet = new DatagramPacket(buf, buf.length);
+        socket.receive(packet);
+        String received = new String(packet.getData(), 0, packet.getLength()).trim();
+        System.out.println("Scheduler received: " + received);
+
+        if (received.contains("available")) {
+            processElevatorAvailability(received, packet);
+        }
+
+        if (!tasks.isEmpty() && !availableElevators.isEmpty()) {
+            state = State.SCHEDULING;
+        }
+    }
+
+    private void processElevatorAvailability(String received, DatagramPacket packet) {
+        String[] parts = received.split(" ");
+        int elevatorId = Integer.parseInt(parts[1]);
+        int elevatorFloor = Integer.parseInt(parts[5]);
+        availableElevators.put(elevatorId, new ElevatorStatus(elevatorId, packet.getAddress(), packet.getPort(), elevatorFloor));
     }
 
     private void sendTask(String task, InetAddress address, int port) throws Exception {
@@ -64,7 +78,6 @@ public class Scheduler implements Runnable {
     }
 
     private void assignTasksIfPossible() {
-        this.state = State.REQUESTING_ELEVATOR;
         while (!tasks.isEmpty() && !availableElevators.isEmpty()) {
             TaskData task = tasks.remove(0);
             ElevatorStatus nearestElevator = findNearestAvailableElevator(task.getInitialFloor());
