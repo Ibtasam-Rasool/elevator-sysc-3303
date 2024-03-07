@@ -4,31 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aab7ce37-097f-491c-879b-7128d26e662b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Elevator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/ElevatorMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Scheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/elevator-sysc-3303.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/elevator-sysc-3303.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="aab7ce37-097f-491c-879b-7128d26e662b" name="Changes" comment="Checkout L1G10_milestone_1">
+      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorIdle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorLoadingPassengers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorMovingToDestination.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorStates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorUnloadingPassengers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/ElevatorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/SchedulerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ButtonLamp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/CSVReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DestinationButton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Door.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elevator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Floor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Motor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scheduler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/TaskData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Elevator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -59,6 +55,9 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2dILjcn1Xz7l8OoJrBUngv5QHk3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -115,8 +114,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.ElevatorMain" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -138,5 +137,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

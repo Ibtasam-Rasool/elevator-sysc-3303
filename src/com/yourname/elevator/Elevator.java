@@ -1,10 +1,13 @@
 package com.yourname.elevator;
 
+import com.yourname.elevator.states.ElevatorIdle;
+import com.yourname.elevator.states.ElevatorStates;
+
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
-public class Elevator implements Runnable {
+public class Elevator implements Runnable{
     enum State {
         IDLE,
         MOVING_TO_INITIAL,
@@ -13,9 +16,9 @@ public class Elevator implements Runnable {
         UNLOADING_PASSENGERS
     }
 
+    private ElevatorStates state;
     private final int id;
     private int currentFloor;
-    private State state;
     private DatagramSocket socket;
     private InetAddress schedulerAddress;
     private int schedulerPort = 4445;
@@ -27,7 +30,7 @@ public class Elevator implements Runnable {
     public Elevator(int id, int port) throws Exception {
         this.id = id;
         this.currentFloor = 1;
-        this.state = State.IDLE;
+        this.state = new ElevatorIdle();
         this.socket = new DatagramSocket(port);
         this.schedulerAddress = InetAddress.getByName("127.0.0.1");
     }
@@ -58,10 +61,18 @@ public class Elevator implements Runnable {
                 parseTaskData(taskDataStr);
                 System.out.println("Elevator " + id + " received task: " + taskDataStr);
 
-                moveToInitialFloor();
-                loadPassengers();
-                moveToDestinationFloor();
-                unloadPassengers();
+                //displayState();
+
+                //JUST FOR TESTING STATES SCHEDULER WILL DO ALL OF THIS
+                moveElevator();
+                displayState();
+                openDoors();
+                displayState();
+                moveElevator();
+                displayState();
+                openDoors();
+                displayState();
+
 
                 notifyAvailability();
             } catch (Exception e) {
@@ -89,55 +100,64 @@ public class Elevator implements Runnable {
         }
     }
 
-    private void moveToInitialFloor() {
-        if (currentFloor != initialFloor) {
-            System.out.println("Elevator " + id + " is moving to the initial floor " + initialFloor);
-            //1 second per floor difference
-            int floorDifference = Math.abs(initialFloor - currentFloor);
-            try {
-                Thread.sleep(1000 * floorDifference);  // Simulate moving
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            currentFloor = initialFloor; // Update current floor
-        }
-        this.state = State.LOADING_PASSENGERS;
+    /**
+     * Represents event telling elevator to close doors
+     */
+    public void closeDoors() {
+        state.closeDoors(this);
     }
 
-    private void loadPassengers() {
-        System.out.println("Elevator " + id + " is loading passengers at floor " + currentFloor);
-        // 3 second load time
-        try {
-            Thread.sleep(3000);  //
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        this.state = State.MOVING_TO_DESTINATION;
+    /**
+     * Represents event telling elevator to open doors
+     */
+    public void openDoors() {
+        state.openDoors(this);
     }
 
-    private void moveToDestinationFloor() {
-        if (currentFloor != destinationFloor) {
-            System.out.println("Elevator " + id + " is moving to the destination floor " + destinationFloor);
-            //1 second per floor diff
-            int floorDifference = Math.abs(destinationFloor - currentFloor);
-            try {
-                Thread.sleep(1000 * floorDifference);  // Simulate moving
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            currentFloor = destinationFloor; // Update current floor
-        }
-        this.state = State.UNLOADING_PASSENGERS;
+    /**
+     * Represents event elevator button pressed
+     */
+    public void buttonPressed() {
+
     }
 
-    private void unloadPassengers() {
-        System.out.println("Elevator " + id + " is unloading passengers at floor " + currentFloor);
-        //3 second load time
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        this.state = State.IDLE;
+    /**
+     * Displays current elevator state
+     */
+    public void displayState() {
+       state.displayState(this);
     }
+
+    /**
+     * Event where elevator told to move to floor
+     */
+    public void moveElevator() {
+        state.moveElevator(this);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getCurrentFloor() {
+        return currentFloor;
+    }
+
+    public int getInitialFloor() {
+        return initialFloor;
+    }
+
+    public void setState(ElevatorStates state) {
+        this.state = state;
+    }
+
+    public int getDestinationFloor() {
+        return destinationFloor;
+    }
+
+    public void setCurrentFloor(int currentFloor) {
+        this.currentFloor = currentFloor;
+    }
+
+
 }
