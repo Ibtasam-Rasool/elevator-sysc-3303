@@ -114,4 +114,8 @@ public class TaskData {
                 ", button='" + button + '\'' +
                 '}';
     }
+
+    public String toDataString() {
+        return "Data," + Integer.toString(time) + "," + Integer.toString(initialFloor) + "," + button + "," + Integer.toString(destinationFloor);
+    }
 }

@@ -3,6 +3,7 @@ package com.yourname.elevator;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,11 +14,17 @@ public class Scheduler implements Runnable {
     private List<TaskData> tasks;
     private final Map<Integer, ElevatorStatus> availableElevators = new HashMap<>();
     private byte[] buf = new byte[256];
+    private final int floorPort = 6665;
 
-    public Scheduler(List<TaskData> tasks) throws Exception {
+    public Scheduler() throws Exception {
         this.state = new IdleState();
         this.socket = new DatagramSocket(4445);
-        this.tasks = tasks;
+        this.tasks = new ArrayList<TaskData>();
+
+        byte[] buf = "Connected".getBytes();
+        DatagramPacket packet = new DatagramPacket(buf, buf.length, InetAddress.getByName("127.0.0.1"), floorPort);
+        socket.send(packet);
+        System.out.println("Connected To Floor");
     }
 
     @Override
@@ -47,6 +54,9 @@ public class Scheduler implements Runnable {
         if (received.contains("available")) {
             processElevatorAvailability(received, packet);
         }
+        if (received.contains("Data")) {
+            addTask(received);
+        }
     }
 
     private void processElevatorAvailability(String received, DatagramPacket packet) {
@@ -54,6 +64,22 @@ public class Scheduler implements Runnable {
         int elevatorId = Integer.parseInt(parts[1]);
         int elevatorFloor = Integer.parseInt(parts[5]);
         availableElevators.put(elevatorId, new ElevatorStatus(elevatorId, packet.getAddress(), packet.getPort(), elevatorFloor));
+    }
+
+    /** adds a new task to the tasks arraylist
+     *
+     * @param received, the new task to be added to the tasks arraylist
+     */
+    private void addTask(String received) {
+        String[] taskString = received.split(",");
+
+        int time = Integer.parseInt(taskString[1].trim());
+        int initialFloor = Integer.parseInt(taskString[2].trim());
+        String button = taskString[3].trim();
+        int destinationFloor = Integer.parseInt(taskString[4].trim());
+
+        TaskData newTask = new TaskData(time,initialFloor,button,destinationFloor);
+        tasks.add(newTask);
     }
 
     private void sendTask(String task, InetAddress address, int port) throws Exception {
