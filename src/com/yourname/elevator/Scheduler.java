@@ -8,18 +8,14 @@ import java.util.List;
 import java.util.Map;
 
 public class Scheduler implements Runnable {
-    enum State {
-        IDLE,
-        SCHEDULING
-    }
     private DatagramSocket socket;
-    private State state;
+    private SchedulerState state;
     private List<TaskData> tasks;
     private final Map<Integer, ElevatorStatus> availableElevators = new HashMap<>();
     private byte[] buf = new byte[256];
 
     public Scheduler(List<TaskData> tasks) throws Exception {
-        this.state = State.IDLE;
+        this.state = new IdleState();
         this.socket = new DatagramSocket(4445);
         this.tasks = tasks;
     }
@@ -35,21 +31,14 @@ public class Scheduler implements Runnable {
          */
         while (true) {
             try {
-                switch (state){
-                    case IDLE:
-                        waitForEvents();
-                        break;
-                    case SCHEDULING:
-                        assignTasksIfPossible();
-                        break;
-                }
+                state.handleEvent(this);
             } catch (Exception e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
     }
 
-    private void waitForEvents() throws Exception {
+    protected void waitForEvents() throws Exception {
         DatagramPacket packet = new DatagramPacket(buf, buf.length);
         socket.receive(packet);
         String received = new String(packet.getData(), 0, packet.getLength()).trim();
@@ -57,10 +46,6 @@ public class Scheduler implements Runnable {
 
         if (received.contains("available")) {
             processElevatorAvailability(received, packet);
-        }
-
-        if (!tasks.isEmpty() && !availableElevators.isEmpty()) {
-            state = State.SCHEDULING;
         }
     }
 
@@ -77,7 +62,7 @@ public class Scheduler implements Runnable {
         socket.send(packet);
     }
 
-    private void assignTasksIfPossible() {
+    protected void assignTasksIfPossible() {
         while (!tasks.isEmpty() && !availableElevators.isEmpty()) {
             TaskData task = tasks.remove(0);
             ElevatorStatus nearestElevator = findNearestAvailableElevator(task.getInitialFloor());
@@ -90,7 +75,6 @@ public class Scheduler implements Runnable {
                 }
             }
         }
-        this.state = State.IDLE;
     }
 
     private ElevatorStatus findNearestAvailableElevator(int floor) {
@@ -123,5 +107,15 @@ public class Scheduler implements Runnable {
         public InetAddress getAddress() { return address; }
         public int getPort() { return port; }
         public int getFloor() { return floor; }
+    }
+
+    public void setState(SchedulerState schedulingState) {
+        state = schedulingState;
+    }
+    public List<TaskData> getTasks(){
+        return tasks;
+    }
+    public Map<Integer, ElevatorStatus> getAvailableElevators(){
+        return availableElevators;
     }
 }
