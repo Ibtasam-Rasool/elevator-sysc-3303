@@ -8,12 +8,18 @@ import java.util.List;
 import java.util.Map;
 
 public class Scheduler implements Runnable {
+    enum State {
+        IDLE,
+        REQUESTING_ELEVATOR
+    }
     private DatagramSocket socket;
+    private State state;
     private List<TaskData> tasks;
     private final Map<Integer, ElevatorStatus> availableElevators = new HashMap<>();
     private byte[] buf = new byte[256];
 
     public Scheduler(List<TaskData> tasks) throws Exception {
+        this.state = State.IDLE;
         this.socket = new DatagramSocket(4445);
         this.tasks = tasks;
     }
@@ -58,6 +64,7 @@ public class Scheduler implements Runnable {
     }
 
     private void assignTasksIfPossible() {
+        this.state = State.REQUESTING_ELEVATOR;
         while (!tasks.isEmpty() && !availableElevators.isEmpty()) {
             TaskData task = tasks.remove(0);
             ElevatorStatus nearestElevator = findNearestAvailableElevator(task.getInitialFloor());
@@ -70,6 +77,7 @@ public class Scheduler implements Runnable {
                 }
             }
         }
+        this.state = State.IDLE;
     }
 
     private ElevatorStatus findNearestAvailableElevator(int floor) {
