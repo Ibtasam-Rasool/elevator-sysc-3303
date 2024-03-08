@@ -17,7 +17,7 @@ public class Scheduler implements Runnable {
     private final int floorPort = 6665;
 
     public Scheduler() throws Exception {
-        this.state = new IdleState();
+        this.state = new SchedulerIdleState();
         this.socket = new DatagramSocket(4445);
         this.tasks = new ArrayList<TaskData>();
 
