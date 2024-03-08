@@ -20,7 +20,7 @@ public class ElevatorLoadingPassengers implements ElevatorStates{
      */
     @Override
     public void openDoors(Elevator context) {
-        System.out.println("Elevator " + context.getId() + " is opening doors and loading passengers at floor " + context.getCurrentFloor());
+        System.out.println("Elevator " + context.getElevatorId() + " is opening doors and loading passengers at floor " + context.getCurrentFloor());
         // 3 second load time
         try {
             Thread.sleep(3000);  //

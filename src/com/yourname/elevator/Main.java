@@ -1,6 +1,7 @@
 package com.yourname.elevator;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,5 +13,6 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 }

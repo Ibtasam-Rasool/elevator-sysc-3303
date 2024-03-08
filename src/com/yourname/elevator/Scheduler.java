@@ -57,6 +57,16 @@ public class Scheduler implements Runnable {
         if (received.contains("Data")) {
             addTask(received);
         }
+        if (received.contains("ElevatorFloorButton")){
+            processElevatorFloorButtonCall(received, packet);
+        }
+    }
+
+    private void processElevatorFloorButtonCall(String received, DatagramPacket packet) {
+        String[] parts = received.split(" ");
+        int elevatorId = Integer.parseInt(parts[1]);
+        int elevatorFloorButton = Integer.parseInt(parts[2]);
+        availableElevators.put(elevatorId, new ElevatorStatus(elevatorId, packet.getAddress(), packet.getPort(), elevatorFloorButton));
     }
 
     private void processElevatorAvailability(String received, DatagramPacket packet) {

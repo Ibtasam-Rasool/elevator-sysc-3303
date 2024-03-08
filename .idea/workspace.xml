@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aab7ce37-097f-491c-879b-7128d26e662b" name="Changes" comment="Checkout L1G10_milestone_1">
-      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorIdle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorLoadingPassengers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorMovingToDestination.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorStates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorUnloadingPassengers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/ElevatorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/ElevatorMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Scheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorIdle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorIdle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorLoadingPassengers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorLoadingPassengers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorMovingToDestination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorMovingToDestination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorUnloadingPassengers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorUnloadingPassengers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +101,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FloorMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yourname.elevator.FloorMain" />
+      <module name="elevator-sysc-3303" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yourname.elevator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.yourname.elevator.Main" />
       <module name="elevator-sysc-3303" />
@@ -116,6 +131,7 @@
       <list>
         <item itemvalue="Application.ElevatorMain" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.FloorMain" />
       </list>
     </recent_temporary>
   </component>

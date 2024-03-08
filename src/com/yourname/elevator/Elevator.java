@@ -26,6 +26,7 @@ public class Elevator implements Runnable{
     private int initialFloor;
     private int destinationFloor;
     private String button;
+    private int floorButton;
 
     public Elevator(int id, int port) throws Exception {
         this.id = id;
@@ -117,8 +118,11 @@ public class Elevator implements Runnable{
     /**
      * Represents event elevator button pressed
      */
-    public void buttonPressed() {
-
+    public void buttonPressed(int floor) throws Exception {
+        floorButton = floor;
+        System.out.println("Internal Elevator Floor Command: Elevator " + id + " will move to " + floor);
+        sendUpdate("ElevatorFloorButton " + id + " " +floorButton);
+        state.buttonPressed(this);
     }
 
     /**
@@ -135,7 +139,7 @@ public class Elevator implements Runnable{
         state.moveElevator(this);
     }
 
-    public int getId() {
+    public int getElevatorId() {
         return id;
     }
 

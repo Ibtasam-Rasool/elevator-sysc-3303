@@ -51,7 +51,7 @@ public class ElevatorMovingToDestination implements ElevatorStates{
     @Override
     public void moveElevator(Elevator context) {
         if (context.getCurrentFloor() !=  context.getDestinationFloor()) {
-            System.out.println("Elevator " + context.getId() + " is moving to the destination floor " + context.getDestinationFloor());
+            System.out.println("Elevator " + context.getElevatorId() + " is moving to the destination floor " + context.getDestinationFloor());
             //1 second per floor diff
             int floorDifference = Math.abs(context.getDestinationFloor() - context.getCurrentFloor());
             try {

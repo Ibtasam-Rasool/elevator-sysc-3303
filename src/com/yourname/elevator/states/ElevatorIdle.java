@@ -53,7 +53,7 @@ public class ElevatorIdle implements ElevatorStates{
         int currentFloor = context.getCurrentFloor();
         int initialFloor = context.getInitialFloor();
         if (currentFloor != initialFloor) {
-            System.out.println("Elevator " + context.getId() + " is moving to the initial floor " + initialFloor);
+            System.out.println("Elevator " + context.getElevatorId() + " is moving to the initial floor " + initialFloor);
             //1 second per floor difference
             int floorDifference = Math.abs(initialFloor - currentFloor);
             try {
