@@ -1,20 +1,12 @@
 package com.yourname.elevator;
 
-import com.yourname.elevator.states.ElevatorIdle;
-import com.yourname.elevator.states.ElevatorStates;
+import com.yourname.elevator.states.*;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 public class Elevator implements Runnable{
-    enum State {
-        IDLE,
-        MOVING_TO_INITIAL,
-        LOADING_PASSENGERS,
-        MOVING_TO_DESTINATION,
-        UNLOADING_PASSENGERS
-    }
 
     private ElevatorStates state;
     private final int id;
@@ -58,27 +50,59 @@ public class Elevator implements Runnable{
             try {
                 DatagramPacket packet = new DatagramPacket(buf, buf.length);
                 socket.receive(packet);
-                String taskDataStr = new String(packet.getData(), 0, packet.getLength()).trim();
-                parseTaskData(taskDataStr);
-                System.out.println("Elevator " + id + " received task: " + taskDataStr);
+                String message = new String(packet.getData(), 0, packet.getLength()).trim();
+
+                System.out.println("Elevator " + id + " received message: " + message);
+
+                if(message.startsWith("TaskData")){
+                    parseTaskData(message);
+                }
+                else if(message.startsWith("ChangeState")){
+                    handleAction(message);
+                }
 
                 //displayState();
 
-                //JUST FOR TESTING STATES SCHEDULER WILL DO ALL OF THIS
-                moveElevator();
-                displayState();
-                openDoors();
-                displayState();
-                moveElevator();
-                displayState();
-                openDoors();
-                displayState();
 
 
                 notifyAvailability();
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public void notifyScheduler(String message) throws Exception {
+        byte[] buf = message.getBytes();
+        DatagramPacket packet = new DatagramPacket(buf, buf.length, schedulerAddress, schedulerPort);
+        socket.send(packet);
+        System.out.println("Elevator " + id + " sent update to Scheduler: " + message);
+    }
+
+    public void readyToCloseDoors() throws Exception {
+        notifyScheduler("ReadyToCloseDoors " + id);
+    }
+
+    private void handleAction(String message) {
+        String[] parts = message.split(" ");
+        String newState = parts[1];
+
+        switch (newState) {
+            case "OPEN_DOOR":
+                openDoors();
+                break;
+            case "CLOSE_DOOR":
+                closeDoors();
+                break;
+            case "LOADING":
+                setState(new ElevatorLoadingPassengers());
+                break;
+            case "MOVING":
+                moveElevator();
+                break;
+            case "UNLOADING":
+                setState(new ElevatorUnloadingPassengers());
+                break;
         }
     }
 

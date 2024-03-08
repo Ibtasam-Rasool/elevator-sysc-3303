@@ -24,8 +24,11 @@ public class ElevatorUnloadingPassengers implements ElevatorStates{
         //3 second load time
         try {
             Thread.sleep(3000);
+            context.readyToCloseDoors();
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
         context.setState(new ElevatorIdle());
     }

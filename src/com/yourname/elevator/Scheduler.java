@@ -53,12 +53,39 @@ public class Scheduler implements Runnable {
 
         if (received.contains("available")) {
             processElevatorAvailability(received, packet);
+
+            String[] parts = received.split(" ");
+            if (parts.length > 1) {
+                try {
+                    int elevatorId = Integer.parseInt(parts[1]);
+                    System.out.println("Elevator ID: " + elevatorId);
+
+                    sendActionCommand(elevatorId, "OPEN_DOOR");
+                    sendActionCommand(elevatorId, "LOADING");
+                    sendActionCommand(elevatorId, "CLOSE_DOOR");
+                } catch (NumberFormatException e) {
+                    System.err.println("Error parsing Elevator ID from message: " + received);
+                }
+            }
         }
         if (received.contains("Data")) {
             addTask(received);
         }
         if (received.contains("ElevatorFloorButton")){
             processElevatorFloorButtonCall(received, packet);
+        }
+        if(received.contains("ReadyToCloseDoors")){
+            handleReadyToCloseDoors(received);
+        }
+    }
+
+    private void handleReadyToCloseDoors(String received) {
+        String[] parts = received.split(" ");
+        int elevatorId = Integer.parseInt(parts[1]);
+        try {
+            sendActionCommand(elevatorId, received);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -103,13 +130,25 @@ public class Scheduler implements Runnable {
             TaskData task = tasks.remove(0);
             ElevatorStatus nearestElevator = findNearestAvailableElevator(task.getInitialFloor());
             if (nearestElevator != null) {
-                availableElevators.remove(nearestElevator.getId());
                 try {
                     sendTask(task.toString(), nearestElevator.getAddress(), nearestElevator.getPort());
+                    sendActionCommand(nearestElevator.getId(), "MOVING");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                availableElevators.remove(nearestElevator.getId());
             }
+        }
+    }
+
+    protected void sendActionCommand(int elevatorId, String newState) throws Exception {
+        ElevatorStatus elevator = availableElevators.get(elevatorId);
+        if (elevator != null) {
+            String command = "ChangeState " + newState;
+            byte[] buf = command.getBytes();
+            DatagramPacket packet = new DatagramPacket(buf, buf.length, elevator.getAddress(), elevator.getPort());
+            socket.send(packet);
+            System.out.println("Sent state change command to Elevator " + elevatorId + ": " + newState);
         }
     }
 
