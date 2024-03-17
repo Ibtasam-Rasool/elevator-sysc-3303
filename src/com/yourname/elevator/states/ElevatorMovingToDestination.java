@@ -10,7 +10,6 @@ public class ElevatorMovingToDestination implements ElevatorStates{
      */
     @Override
     public void closeDoors(Elevator context) {
-
     }
 
     /**
@@ -20,7 +19,7 @@ public class ElevatorMovingToDestination implements ElevatorStates{
      */
     @Override
     public void openDoors(Elevator context) {
-
+        System.out.println("Elevator doors cannot open or close while in Moving state");
     }
 
     /**

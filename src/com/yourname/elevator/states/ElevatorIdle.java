@@ -10,7 +10,7 @@ public class ElevatorIdle implements ElevatorStates{
      */
     @Override
     public void closeDoors(Elevator context) {
-
+        System.out.println("Elevator doors cannot open or close while in Idle state");
     }
 
     /**
@@ -20,7 +20,7 @@ public class ElevatorIdle implements ElevatorStates{
      */
     @Override
     public void openDoors(Elevator context) {
-
+        System.out.println("Elevator doors cannot open or close while in Idle state");
     }
 
     /**

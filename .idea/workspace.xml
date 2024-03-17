@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aab7ce37-097f-491c-879b-7128d26e662b" name="Changes" comment="Checkout L1G10_milestone_1">
+    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Modified scheduler">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Elevator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/ElevatorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/ElevatorMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Scheduler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorIdle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorIdle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorLoadingPassengers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorLoadingPassengers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorMovingToDestination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorMovingToDestination.java" afterDir="false" />
@@ -23,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -31,32 +29,25 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="L1G10_milestone_2" />
+        <entry key="$PROJECT_DIR$" value="L1G10_milestone_3_GUI" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Jestan2&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="1cdd24ce-cb68-4d35-be23-b654558987d0" />
-        <option name="url" value="https://github.com/Ibtasam-Rasool/elevator-sysc-3303.git" />
-      </UrlAndAccount>
-    </option>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/ElevatorCallSheet - Sheet1.csv" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Scheduler.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2dILjcn1Xz7l8OoJrBUngv5QHk3" />
+  <component name="ProjectId" id="2beDgIrqHYFy492B0ZbcT5DHqzf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -64,91 +55,188 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;L1G10__milestone__3&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ElevatorMain.executor": "Run",
+    "Application.ExcelReader.executor": "Run",
+    "Application.FloorMain.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.com.yourname.elevator.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.All in elevator-sysc-3303.executor": "Run",
+    "JUnit.CSVReaderTest.executor": "Run",
+    "JUnit.SchedulerTest.executor": "Run",
+    "JUnit.SchedulerTest.schedulerPath1.executor": "Run",
+    "JUnit.SynchronizationTest.executor": "Run",
+    "JUnit.TaskDataTest.executor": "Run",
+    "JUnit.TestClass.CSVReaderTest.executor": "Run",
+    "JUnit.TestClass.test.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "L1G10__milestone__3__test",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Carleton/SYSC3303/Project/Diagrams",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.18965517",
+    "settings.editor.selected.configurable": "configurable.group.language",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Carleton\SYSC3303\Project\Diagrams" />
+      <recent name="C:\Carleton\SYSC3303\Project" />
+      <recent name="C:\Carleton\SYSC3303\Project\Tests" />
+      <recent name="C:\Carleton\SYSC3303\Project\src" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Jesta\Documents\Java Code\elevator-sysc-3303\src" />
-      <recent name="C:\Users\Jesta\Documents\Java Code\elevator-sysc-3303\src\com\yourname\elevator" />
+      <recent name="C:\Carleton\SYSC3303\Project\Diagrams" />
+      <recent name="C:\Carleton\SYSC3303\Project" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="ElevatorMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.yourname.elevator.ElevatorMain" />
-      <module name="elevator-sysc-3303" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yourname.elevator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FloorMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.yourname.elevator.FloorMain" />
-      <module name="elevator-sysc-3303" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yourname.elevator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.yourname.elevator.Main" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="elevator-sysc-3303" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yourname.elevator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in elevator-sysc-3303" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elevator-sysc-3303" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulerTest.schedulerPath1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elevator-sysc-3303" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
+      <option name="METHOD_NAME" value="schedulerPath1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulerTest.schedulerPath2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elevator-sysc-3303" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
+      <option name="METHOD_NAME" value="schedulerPath2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulerTest.schedulerPath3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elevator-sysc-3303" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
+      <option name="METHOD_NAME" value="schedulerPath3" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ElevatorMain" />
+        <item itemvalue="JUnit.SchedulerTest.schedulerPath3" />
+        <item itemvalue="JUnit.SchedulerTest.schedulerPath2" />
+        <item itemvalue="JUnit.SchedulerTest.schedulerPath1" />
+        <item itemvalue="JUnit.All in elevator-sysc-3303" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.FloorMain" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="aab7ce37-097f-491c-879b-7128d26e662b" name="Changes" comment="" />
-      <created>1709690781866</created>
+      <changelist id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="" />
+      <created>1706566763464</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1709690781866</updated>
-      <workItem from="1709690782964" duration="11885000" />
-      <workItem from="1709749430411" duration="642000" />
-      <workItem from="1709750099490" duration="63000" />
-      <workItem from="1709750172324" duration="2005000" />
-      <workItem from="1709763098080" duration="1174000" />
+      <updated>1706566763464</updated>
+      <workItem from="1706854750219" duration="6742000" />
+      <workItem from="1706917351910" duration="8852000" />
+      <workItem from="1708750026411" duration="868000" />
+      <workItem from="1708751265493" duration="30023000" />
     </task>
+    <task id="LOCAL-00001" summary="Created CSV Reader and slightly altered the formatting of TaskData Class">
+      <option name="closed" value="true" />
+      <created>1706939776097</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706939776097</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added getters to Scheduler and Floor, added test directory, added sample CSV file to src, modified CSVReaderTest, and added test classes SchedulerTest and TaskDataTest">
+      <option name="closed" value="true" />
+      <created>1707006379846</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707006379846</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Replaced README file">
+      <option name="closed" value="true" />
+      <created>1707008737186</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707008737186</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Replaced README file">
+      <option name="closed" value="true" />
+      <created>1707008785308</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707008785308</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Minor addition to README file; to do section. Also added UML class and UML sequence diagrams">
+      <option name="closed" value="true" />
+      <created>1707009404283</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707009404283</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,5 +252,18 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created CSV Reader and slightly altered the formatting of TaskData Class" />
+    <MESSAGE value="Checkout L1G10_milestone_1" />
+    <MESSAGE value="Added getters to Scheduler and Floor, added test directory, added sample CSV file to src, modified CSVReaderTest, and added test classes SchedulerTest and TaskDataTest" />
+    <MESSAGE value="Replaced README file" />
+    <MESSAGE value="Minor addition to README file; to do section. Also added UML class and UML sequence diagrams" />
+    <MESSAGE value="Changed state machine in Elevator. Trying to get it to work with Motor and Scheduler." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed state machine in Elevator. Trying to get it to work with Motor and Scheduler." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -10,7 +10,7 @@ public class ElevatorUnloadingPassengers implements ElevatorStates{
      */
     @Override
     public void closeDoors(Elevator context) {
-
+        System.out.println("Elevator doors cannot be closed while in Unloading state");
     }
 
     /**

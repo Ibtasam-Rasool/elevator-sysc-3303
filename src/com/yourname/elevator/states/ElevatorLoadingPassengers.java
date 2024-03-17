@@ -10,7 +10,7 @@ public class ElevatorLoadingPassengers implements ElevatorStates{
      */
     @Override
     public void closeDoors(Elevator context) {
-
+        System.out.println("Elevator doors cannot be closed in Loading state");
     }
 
     /**
@@ -60,6 +60,6 @@ public class ElevatorLoadingPassengers implements ElevatorStates{
      */
     @Override
     public void moveElevator(Elevator context) {
-
+        System.out.println("Elevator cannot move while in Loading state.");
     }
 }
