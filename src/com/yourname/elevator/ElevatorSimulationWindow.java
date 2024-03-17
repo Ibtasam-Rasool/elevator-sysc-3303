@@ -5,13 +5,18 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * GUI to simulate elevator movement between floors.
+ *
+ * @Author: Daniel Godfrey
+ */
 class ElevatorSimulationWindow extends JPanel {
-    private final int carWidth = 40; // Width of the car (square)
-    private final int carHeight = 40; // Height of the car
-    private final int[] carPosition = {60, 50}; // Initial position of the car, adjusted to be on the left
-    private int moveY = -1; // Destination Y coordinate for vertical movement
+    private final int carWidth = 40;
+    private final int carHeight = 40;
+    private final int[] carPosition = {60, 50}; // Initial position of elevator car
+    private int moveY = -1; // Y coordinate for vertical movement of elevator
     private final int velocity = 10; // Pixels moved per timer tick
-    private int[] stoppingPoints; // Positions of stopping points for vertical orientation
+    private int[] stoppingPoints; // Positions of stopping points (floors)
     private Timer timer;
 
     public ElevatorSimulationWindow(int numberOfStoppingPoints) {
@@ -20,12 +25,12 @@ class ElevatorSimulationWindow extends JPanel {
         calculateStoppingPoints(numberOfStoppingPoints);
         carPosition[1] = stoppingPoints[0] - carHeight/2;
 
+        // Mouse can control elevator movement, but this is mostly for testing purposes. Scheduler should call moveCar()
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                // Find the closest stopping point and set it as the destination
                 for (int point : stoppingPoints) {
-                    if (Math.abs(e.getY() - point) < 50) { // Adjusted for vertical clicks
+                    if (Math.abs(e.getY() - point) < 50) { // Find the closest stopping point within 50 pixels and set it as the destination
                         moveY = point; // Set destination point for vertical movement
                         startCarMovement();
                         break;
@@ -43,12 +48,17 @@ class ElevatorSimulationWindow extends JPanel {
         }
     }
 
+    /**
+     * Move the elevator car to a specified floor.
+     *
+     * @param destinationY the destination of the elevator car
+     */
     private void moveCar(int destinationY) {
         if (destinationY != -1) {
             int carMidPoint = carPosition[1] + carHeight / 2;
             if (Math.abs(carMidPoint - destinationY) <= velocity) {
-                carPosition[1] = destinationY - carHeight / 2; // Align car's midpoint with stopping point vertically
-                timer.stop(); // Stop the car when it reaches the destination
+                carPosition[1] = destinationY - carHeight / 2;
+                timer.stop();
             } else if (carMidPoint < destinationY) {
                 carPosition[1] += velocity; // Move down
             } else if (carMidPoint > destinationY) {
@@ -58,6 +68,11 @@ class ElevatorSimulationWindow extends JPanel {
         }
     }
 
+    /**
+     * Calculate the positions of each floor in the shaft when floors are placed at an equal distance from each other.
+     *
+     * @param numberOfStoppingPoints the number of floors
+     */
     private void calculateStoppingPoints(int numberOfStoppingPoints) {
         stoppingPoints = new int[numberOfStoppingPoints];
         int distance = this.getPreferredSize().height / (numberOfStoppingPoints + 1);
@@ -71,20 +86,17 @@ class ElevatorSimulationWindow extends JPanel {
         super.paintComponent(g);
         g.setColor(Color.BLACK);
 
-        // Adjusted to draw the elevator from the bottom to the top stopping point
-        int elevatorStartY = stoppingPoints[stoppingPoints.length - 1] - 5; // Start of the elevator
-        int elevatorEndY = stoppingPoints[0] + 5; // End of the elevator
+        int elevatorStartY = stoppingPoints[stoppingPoints.length - 1] - 5; // Start of the elevator shaft
+        int elevatorEndY = stoppingPoints[0] + 5; // End of the elevator shaft
         g.drawLine(100, elevatorStartY, 100, elevatorEndY);
 
-        // Draw stopping points and labels vertically, starting labels from "1"
         for (int i = 0; i < stoppingPoints.length; i++) {
             int point = stoppingPoints[i];
-            g.fillOval(95, point - 5, 10, 10); // Small circles for stopping points, adjusted for left side
-            // Adjusted label numbering to start from "1"
-            g.drawString(Integer.toString(i + 1), 110, point + 5);
+            g.fillOval(95, point - 5, 10, 10); // Small circles represent "floors"
+            g.drawString(Integer.toString(i + 1), 110, point + 5); // Start at floor "1"
         }
 
-        // Draw the car on the left side of the elevator
+        // Draw car to the left of the elevator
         g.fillRect(carPosition[0], carPosition[1], carWidth, carHeight);
     }
 }
