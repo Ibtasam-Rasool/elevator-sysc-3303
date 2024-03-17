@@ -25,7 +25,7 @@ public class CarButtonPanel extends JFrame {
     }
 
     private void initializeUI() {
-        setTitle("Elevator Control Panel");
+        setTitle("Car Button Panel");
         setSize(300, 600);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -24,7 +24,7 @@ public class FloorButtonPanel extends JFrame {
     }
 
     private void initializeUI() {
-        setTitle("Elevator Control Panel");
+        setTitle("Floor Button Panel");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(400, 300); // Adjust window size
         setLayout(new GridBagLayout()); // Use GridBagLayout for better control over component positioning
