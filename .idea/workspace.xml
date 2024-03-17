@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Modified scheduler">
+    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Added ElevatorSimulationWindow - a GUI to simulate elevator movement">
+      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/FloorButtonPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/ElevatorSimulationWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/ElevatorSimulationWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,47 +52,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ElevatorMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ExcelReader.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FloorMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.com.yourname.elevator.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.All in elevator-sysc-3303.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CSVReaderTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SchedulerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SchedulerTest.schedulerPath1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SynchronizationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TaskDataTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestClass.CSVReaderTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestClass.test.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;L1G10__milestone__3__GUI&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Carleton/SYSC3303/Project/src/com/yourname/elevator&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.18965517&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ElevatorMain.executor": "Run",
+    "Application.ExcelReader.executor": "Run",
+    "Application.FloorButtonPanel.executor": "Run",
+    "Application.FloorMain.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.com.yourname.elevator.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.All in elevator-sysc-3303.executor": "Run",
+    "JUnit.CSVReaderTest.executor": "Run",
+    "JUnit.SchedulerTest.executor": "Run",
+    "JUnit.SchedulerTest.schedulerPath1.executor": "Run",
+    "JUnit.SynchronizationTest.executor": "Run",
+    "JUnit.TaskDataTest.executor": "Run",
+    "JUnit.TestClass.CSVReaderTest.executor": "Run",
+    "JUnit.TestClass.test.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "L1G10__milestone__3__GUI",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Carleton/SYSC3303/Project/src/com/yourname/elevator",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.18965517",
+    "settings.editor.selected.configurable": "configurable.group.language",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Carleton\SYSC3303\Project\src\com\yourname\elevator" />
@@ -114,6 +116,7 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yourname.elevator" />
       <recent name="" />
     </key>
   </component>
@@ -241,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710696153562</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added ElevatorSimulationWindow - a GUI to simulate elevator movement">
+      <option name="closed" value="true" />
+      <created>1710697041679</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710697041679</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,7 +277,8 @@
     <MESSAGE value="Changed state machine in Elevator. Trying to get it to work with Motor and Scheduler." />
     <MESSAGE value="Checkout L1G10_milestone_1" />
     <MESSAGE value="Modified scheduler" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified scheduler" />
+    <MESSAGE value="Added ElevatorSimulationWindow - a GUI to simulate elevator movement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ElevatorSimulationWindow - a GUI to simulate elevator movement" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -22,6 +22,11 @@ public class Main extends JFrame{
         int stoppingPoints = Integer.parseInt(input);
         SwingUtilities.invokeLater(() -> new Main(stoppingPoints));
 
+        SwingUtilities.invokeLater(() -> {
+            FloorButtonPanel panel = new FloorButtonPanel(stoppingPoints);
+            panel.setVisible(true);
+        });
+
         try {
             Scheduler scheduler = new Scheduler();
             Thread schedulerThread = new Thread(scheduler);
