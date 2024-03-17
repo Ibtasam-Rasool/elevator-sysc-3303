@@ -27,6 +27,8 @@ public class Main extends JFrame{
             panel.setVisible(true);
         });
 
+        SwingUtilities.invokeLater(() -> new CarButtonPanel(stoppingPoints, 1)); // numCars can be taken by user input, but I don't want to conflict with ElevatorMain
+
         try {
             Scheduler scheduler = new Scheduler();
             Thread schedulerThread = new Thread(scheduler);

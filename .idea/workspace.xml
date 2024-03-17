@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Added ElevatorSimulationWindow - a GUI to simulate elevator movement">
-      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/FloorButtonPanel.java" afterDir="false" />
+    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Added FloorButtonPanel - a GUI to simulate the button panels at each floor">
+      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/CarButtonPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/FloorButtonPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/FloorButtonPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +55,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CarButtonPanel.executor": "Run",
     "Application.ElevatorMain.executor": "Run",
     "Application.ExcelReader.executor": "Run",
     "Application.FloorButtonPanel.executor": "Run",
@@ -252,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710697041679</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added FloorButtonPanel - a GUI to simulate the button panels at each floor">
+      <option name="closed" value="true" />
+      <created>1710698700187</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710698700187</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +288,8 @@
     <MESSAGE value="Checkout L1G10_milestone_1" />
     <MESSAGE value="Modified scheduler" />
     <MESSAGE value="Added ElevatorSimulationWindow - a GUI to simulate elevator movement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ElevatorSimulationWindow - a GUI to simulate elevator movement" />
+    <MESSAGE value="Added FloorButtonPanel - a GUI to simulate the button panels at each floor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added FloorButtonPanel - a GUI to simulate the button panels at each floor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

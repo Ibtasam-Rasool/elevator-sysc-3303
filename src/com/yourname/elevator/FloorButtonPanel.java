@@ -105,5 +105,4 @@ public class FloorButtonPanel extends JFrame {
         timer.setRepeats(false);
         timer.start();
     }
-
 }
