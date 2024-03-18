@@ -72,9 +72,7 @@ First, open your terminal and navigate to the project's root directory. Then do 
 
 ### To Do
 ___
-Modify state machines in Elevator and Scheduler.
-
-Add queues to Elevator and Schduler.
+Integrate elevator and button panel GUIs with the scheduler.
 
 Implement algorithm to manage elevator tasks with two or more elevators:
 - One elevator should wait (start) at the bottom, and the other elevator should wait (start) at the top. For now, we will just implement one elevator that starts at the bottom floor.
