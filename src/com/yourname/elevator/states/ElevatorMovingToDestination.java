@@ -39,9 +39,8 @@ public class ElevatorMovingToDestination implements ElevatorStates{
      * @return
      */
     @Override
-    public ElevatorStates displayState(Elevator context) {
+    public void displayState(Elevator context) {
         System.out.println("MOVING TO DEST");
-        return this;
     }
 
     /**

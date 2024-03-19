@@ -152,9 +152,11 @@ public class Elevator implements Runnable{
     /**
      * Displays current elevator state
      */
-    public ElevatorStates  displayState() {
-       return state.displayState(this);
+    public void displayState() {
+       state.displayState(this);
     }
+
+    public ElevatorStates getState(){ return state; }
 
     /**
      * Event where elevator told to move to floor

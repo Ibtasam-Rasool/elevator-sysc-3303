@@ -40,9 +40,8 @@ public class ElevatorIdle implements ElevatorStates{
      * @return
      */
     @Override
-    public ElevatorStates displayState(Elevator context) {
+    public void displayState(Elevator context) {
         System.out.println("IDLE");
-        return this;
     }
 
     /**

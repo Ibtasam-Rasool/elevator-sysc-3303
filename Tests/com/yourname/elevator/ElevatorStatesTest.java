@@ -23,33 +23,33 @@ class ElevatorStatesTest {
     @Test
     void testIdleToLoadingTransition() {
         elevator.setState(new ElevatorIdle());
-        assertTrue(elevator.displayState() instanceof ElevatorIdle);
+        assertTrue(elevator.getState() instanceof ElevatorIdle);
         elevator.moveElevator();
-        assertTrue(elevator.displayState() instanceof ElevatorLoadingPassengers);
+        assertTrue(elevator.getState() instanceof ElevatorLoadingPassengers);
     }
 
     @Test
     void testLoadingToMovingTransition() {
         elevator.setState(new ElevatorLoadingPassengers());
-        assertTrue(elevator.displayState() instanceof ElevatorLoadingPassengers);
+        assertTrue(elevator.getState() instanceof ElevatorLoadingPassengers);
         //elevator.closeDoors();
         elevator.openDoors();
-        assertTrue(elevator.displayState() instanceof ElevatorMovingToDestination);
+        assertTrue(elevator.getState() instanceof ElevatorMovingToDestination);
     }
 
     @Test
     void testMovingToUnloadingTransition() {
         elevator.setState(new ElevatorMovingToDestination());
-        assertTrue(elevator.displayState() instanceof ElevatorMovingToDestination);
+        assertTrue(elevator.getState() instanceof ElevatorMovingToDestination);
         elevator.moveElevator();
-        assertTrue(elevator.displayState() instanceof ElevatorUnloadingPassengers);
+        assertTrue(elevator.getState() instanceof ElevatorUnloadingPassengers);
     }
 
     @Test
     void testUnloadingToIdleTransition() {
         elevator.setState(new ElevatorUnloadingPassengers());
-        assertTrue(elevator.displayState() instanceof ElevatorUnloadingPassengers);
+        assertTrue(elevator.getState() instanceof ElevatorUnloadingPassengers);
         elevator.openDoors();
-        assertTrue(elevator.displayState() instanceof ElevatorIdle);
+        assertTrue(elevator.getState() instanceof ElevatorIdle);
     }
 }

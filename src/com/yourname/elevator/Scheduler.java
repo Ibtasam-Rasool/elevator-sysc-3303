@@ -165,6 +165,14 @@ public class Scheduler implements Runnable {
         return nearestElevator;
     }
 
+    public SchedulerState getState() {
+        return state;
+    }
+
+    public void close() {
+        socket.close();
+    }
+
     private static class ElevatorStatus {
         private final int id;
         private final InetAddress address;

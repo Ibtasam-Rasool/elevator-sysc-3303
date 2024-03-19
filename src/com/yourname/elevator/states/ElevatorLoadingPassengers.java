@@ -50,9 +50,8 @@ public class ElevatorLoadingPassengers implements ElevatorStates{
      * @return
      */
     @Override
-    public ElevatorStates displayState(Elevator context) {
+    public void displayState(Elevator context) {
         System.out.println("LOAD PASS");
-        return this;
     }
 
     /**

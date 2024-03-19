@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Modified scheduler">
-      <change afterPath="$PROJECT_DIR$/.idea/Elevator Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/com/yourname/elevator/ElevatorStatesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/junit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/junit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Changed name for Elevator state transition test class">
+      <change afterPath="$PROJECT_DIR$/Tests/com/yourname/elevator/SchedulerStatesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/CSVReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/com/yourname/elevator/CSVReaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TaskDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/com/yourname/elevator/TaskDataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/com/yourname/elevator/ElevatorStatesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/com/yourname/elevator/ElevatorStatesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Scheduler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorIdle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorIdle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorLoadingPassengers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorLoadingPassengers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorMovingToDestination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorMovingToDestination.java" afterDir="false" />
@@ -145,22 +141,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="CSVReaderTest.parser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Elevator Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yourname.elevator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.yourname.elevator" />
-      <option name="MAIN_CLASS_NAME" value="com.yourname.elevator.CSVReaderTest" />
-      <option name="METHOD_NAME" value="parser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ElevatorSimulationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Elevator Project" />
       <extension name="coverage">
@@ -224,13 +204,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SchedulerStatesTest.testIdleToLoadingTransition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Elevator Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yourname.elevator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yourname.elevator" />
+      <option name="MAIN_CLASS_NAME" value="com.yourname.elevator.SchedulerStatesTest" />
+      <option name="METHOD_NAME" value="testIdleToLoadingTransition" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SchedulerStatesTest.testIdleToLoadingTransition" />
         <item itemvalue="JUnit.ElevatorSimulationTest.testLoadingToMovingTransition" />
         <item itemvalue="JUnit.ElevatorSimulationTest.testIdleToLoadingTransition" />
         <item itemvalue="JUnit.ElevatorSimulationTest.testMovingToUnloadingTransition" />
         <item itemvalue="JUnit.ElevatorSimulationTest" />
-        <item itemvalue="JUnit.CSVReaderTest.parser" />
       </list>
     </recent_temporary>
   </component>
@@ -294,7 +290,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707009404283</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added close() method to Elevator, Modified displayState() in all elevator states to return instance of itself. Added test class for Elevator">
+      <option name="closed" value="true" />
+      <created>1710853129531</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710853129531</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Changed name for Elevator state transition test class">
+      <option name="closed" value="true" />
+      <created>1710853284375</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710853284375</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +330,9 @@
     <MESSAGE value="Replaced README file" />
     <MESSAGE value="Minor addition to README file; to do section. Also added UML class and UML sequence diagrams" />
     <MESSAGE value="Changed state machine in Elevator. Trying to get it to work with Motor and Scheduler." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed state machine in Elevator. Trying to get it to work with Motor and Scheduler." />
+    <MESSAGE value="Added close() method to Elevator, Modified displayState() in all elevator states to return instance of itself. Added test class for Elevator" />
+    <MESSAGE value="Changed name for Elevator state transition test class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed name for Elevator state transition test class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
