@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Changed name for Elevator state transition test class">
-      <change afterPath="$PROJECT_DIR$/Tests/com/yourname/elevator/SchedulerStatesTest.java" afterDir="false" />
+    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Added getState() method to Elevator and Scheduler classes. Added test class for setting Scheduler states.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/com/yourname/elevator/ElevatorStatesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/com/yourname/elevator/ElevatorStatesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Elevator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Scheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorIdle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorIdle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorLoadingPassengers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorLoadingPassengers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorMovingToDestination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorMovingToDestination.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorStates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorUnloadingPassengers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorUnloadingPassengers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/ElevatorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/ElevatorMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710853284375</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added getState() method to Elevator and Scheduler classes. Added test class for setting Scheduler states.">
+      <option name="closed" value="true" />
+      <created>1710855447684</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710855447684</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +333,8 @@
     <MESSAGE value="Changed state machine in Elevator. Trying to get it to work with Motor and Scheduler." />
     <MESSAGE value="Added close() method to Elevator, Modified displayState() in all elevator states to return instance of itself. Added test class for Elevator" />
     <MESSAGE value="Changed name for Elevator state transition test class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed name for Elevator state transition test class" />
+    <MESSAGE value="Added getState() method to Elevator and Scheduler classes. Added test class for setting Scheduler states." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added getState() method to Elevator and Scheduler classes. Added test class for setting Scheduler states." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

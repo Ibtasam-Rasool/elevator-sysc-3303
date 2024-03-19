@@ -1,5 +1,6 @@
 package com.yourname.elevator;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,6 +10,18 @@ public class ElevatorMain {
     private static int calledElevator;
     private static ArrayList<Elevator> elevatorList;
     public static void main(String[] args) {
+        String input = JOptionPane.showInputDialog("Enter the number of floors:");
+        int stoppingPoints = Integer.parseInt(input);
+        SwingUtilities.invokeLater(() -> new Main(stoppingPoints));
+
+        SwingUtilities.invokeLater(() -> {
+            FloorButtonPanel panel = new FloorButtonPanel(stoppingPoints);
+            panel.setVisible(true);
+        });
+
+        SwingUtilities.invokeLater(() -> new CarButtonPanel(stoppingPoints, 1)); // numCars can be taken by user input, but I don't want to conflict with ElevatorMain
+
+
         elevatorList = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number of elevators:");
