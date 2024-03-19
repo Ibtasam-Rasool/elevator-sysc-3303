@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Added FloorButtonPanel - a GUI to simulate the button panels at each floor">
-      <change afterPath="$PROJECT_DIR$/src/com/yourname/elevator/CarButtonPanel.java" afterDir="false" />
+    <list default="true" id="8b9fd378-4313-4a3c-a879-f1ea82b0560b" name="Changes" comment="Modified scheduler">
+      <change afterPath="$PROJECT_DIR$/.idea/Elevator Project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/com/yourname/elevator/ElevatorStatesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/junit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/junit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/FloorButtonPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/FloorButtonPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/CSVReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/com/yourname/elevator/CSVReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TaskDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/com/yourname/elevator/TaskDataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorIdle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorIdle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorLoadingPassengers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorLoadingPassengers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorMovingToDestination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorMovingToDestination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorStates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorUnloadingPassengers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yourname/elevator/states/ElevatorUnloadingPassengers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +41,21 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Dicenas"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2e7dc796-323d-4ed3-b425-faf2b3ec300a" />
+        <option name="url" value="https://github.com/Ibtasam-Rasool/elevator-sysc-3303.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/ElevatorCallSheet - Sheet1.csv" root0="FORCE_HIGHLIGHTING" />
@@ -55,10 +80,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.CarButtonPanel.executor": "Run",
     "Application.ElevatorMain.executor": "Run",
     "Application.ExcelReader.executor": "Run",
-    "Application.FloorButtonPanel.executor": "Run",
     "Application.FloorMain.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.com.yourname.elevator.Main.executor": "Run",
@@ -83,22 +106,21 @@
     "create.test.in.the.same.root": "true",
     "git-widget-placeholder": "L1G10__milestone__3__GUI",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Carleton/SYSC3303/Project/src/com/yourname/elevator",
+    "last_opened_file_path": "C:/Users/d_god/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.18965517",
-    "settings.editor.selected.configurable": "configurable.group.language",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "http.proxy",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Carleton\SYSC3303\Project\src\com\yourname\elevator" />
       <recent name="C:\Carleton\SYSC3303\Project\Diagrams" />
       <recent name="C:\Carleton\SYSC3303\Project" />
       <recent name="C:\Carleton\SYSC3303\Project\Tests" />
@@ -112,57 +134,91 @@
       <recent name="C:\Carleton\SYSC3303\Project" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.yourname.elevator" />
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.yourname.elevator" />
       <recent name="" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="elevator-sysc-3303" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in elevator-sysc-3303" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="elevator-sysc-3303" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SchedulerTest.schedulerPath1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="elevator-sysc-3303" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
-      <option name="METHOD_NAME" value="schedulerPath1" />
+    <configuration name="CSVReaderTest.parser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Elevator Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yourname.elevator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yourname.elevator" />
+      <option name="MAIN_CLASS_NAME" value="com.yourname.elevator.CSVReaderTest" />
+      <option name="METHOD_NAME" value="parser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchedulerTest.schedulerPath2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="elevator-sysc-3303" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
-      <option name="METHOD_NAME" value="schedulerPath2" />
+    <configuration name="ElevatorSimulationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Elevator Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yourname.elevator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yourname.elevator" />
+      <option name="MAIN_CLASS_NAME" value="com.yourname.elevator.ElevatorSimulationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ElevatorSimulationTest.testIdleToLoadingTransition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Elevator Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yourname.elevator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yourname.elevator" />
+      <option name="MAIN_CLASS_NAME" value="com.yourname.elevator.ElevatorSimulationTest" />
+      <option name="METHOD_NAME" value="testIdleToLoadingTransition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SchedulerTest.schedulerPath3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="elevator-sysc-3303" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SchedulerTest" />
-      <option name="METHOD_NAME" value="schedulerPath3" />
+    <configuration name="ElevatorSimulationTest.testLoadingToMovingTransition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Elevator Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yourname.elevator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yourname.elevator" />
+      <option name="MAIN_CLASS_NAME" value="com.yourname.elevator.ElevatorSimulationTest" />
+      <option name="METHOD_NAME" value="testLoadingToMovingTransition" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ElevatorSimulationTest.testMovingToUnloadingTransition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Elevator Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yourname.elevator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yourname.elevator" />
+      <option name="MAIN_CLASS_NAME" value="com.yourname.elevator.ElevatorSimulationTest" />
+      <option name="METHOD_NAME" value="testMovingToUnloadingTransition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -170,11 +226,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.SchedulerTest.schedulerPath3" />
-        <item itemvalue="JUnit.SchedulerTest.schedulerPath2" />
-        <item itemvalue="JUnit.SchedulerTest.schedulerPath1" />
-        <item itemvalue="JUnit.All in elevator-sysc-3303" />
+        <item itemvalue="JUnit.ElevatorSimulationTest.testLoadingToMovingTransition" />
+        <item itemvalue="JUnit.ElevatorSimulationTest.testIdleToLoadingTransition" />
+        <item itemvalue="JUnit.ElevatorSimulationTest.testMovingToUnloadingTransition" />
+        <item itemvalue="JUnit.ElevatorSimulationTest" />
+        <item itemvalue="JUnit.CSVReaderTest.parser" />
       </list>
     </recent_temporary>
   </component>
@@ -238,31 +294,7 @@
       <option name="project" value="LOCAL" />
       <updated>1707009404283</updated>
     </task>
-    <task id="LOCAL-00006" summary="Modified scheduler">
-      <option name="closed" value="true" />
-      <created>1710696153562</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1710696153562</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Added ElevatorSimulationWindow - a GUI to simulate elevator movement">
-      <option name="closed" value="true" />
-      <created>1710697041679</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1710697041679</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Added FloorButtonPanel - a GUI to simulate the button panels at each floor">
-      <option name="closed" value="true" />
-      <created>1710698700187</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1710698700187</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,15 +313,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created CSV Reader and slightly altered the formatting of TaskData Class" />
+    <MESSAGE value="Checkout L1G10_milestone_1" />
     <MESSAGE value="Added getters to Scheduler and Floor, added test directory, added sample CSV file to src, modified CSVReaderTest, and added test classes SchedulerTest and TaskDataTest" />
     <MESSAGE value="Replaced README file" />
     <MESSAGE value="Minor addition to README file; to do section. Also added UML class and UML sequence diagrams" />
     <MESSAGE value="Changed state machine in Elevator. Trying to get it to work with Motor and Scheduler." />
-    <MESSAGE value="Checkout L1G10_milestone_1" />
-    <MESSAGE value="Modified scheduler" />
-    <MESSAGE value="Added ElevatorSimulationWindow - a GUI to simulate elevator movement" />
-    <MESSAGE value="Added FloorButtonPanel - a GUI to simulate the button panels at each floor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added FloorButtonPanel - a GUI to simulate the button panels at each floor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed state machine in Elevator. Trying to get it to work with Motor and Scheduler." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

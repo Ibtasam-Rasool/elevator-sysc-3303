@@ -1,3 +1,5 @@
+package com.yourname.elevator;
+
 import junit.framework.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

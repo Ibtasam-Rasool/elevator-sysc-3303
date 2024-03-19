@@ -152,8 +152,8 @@ public class Elevator implements Runnable{
     /**
      * Displays current elevator state
      */
-    public void displayState() {
-       state.displayState(this);
+    public ElevatorStates  displayState() {
+       return state.displayState(this);
     }
 
     /**
@@ -187,5 +187,7 @@ public class Elevator implements Runnable{
         this.currentFloor = currentFloor;
     }
 
-
+    public void close(){
+        socket.close();
+    }
 }

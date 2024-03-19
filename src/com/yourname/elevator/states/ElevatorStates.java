@@ -24,9 +24,11 @@ public interface ElevatorStates {
 
     /**
      * Displays current elevator state
+     *
      * @param context represents the elevator
+     * @return
      */
-    void displayState(Elevator context);
+    ElevatorStates displayState(Elevator context);
 
     /**
      * Event where elevator told to move to floor

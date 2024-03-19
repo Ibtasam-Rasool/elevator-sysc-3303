@@ -37,10 +37,12 @@ public class ElevatorIdle implements ElevatorStates{
      * Displays current elevator state
      *
      * @param context represents the elevator
+     * @return
      */
     @Override
-    public void displayState(Elevator context) {
+    public ElevatorStates displayState(Elevator context) {
         System.out.println("IDLE");
+        return this;
     }
 
     /**
