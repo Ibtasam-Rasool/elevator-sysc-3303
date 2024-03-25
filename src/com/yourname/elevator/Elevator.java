@@ -79,11 +79,19 @@ public class Elevator implements Runnable{
         System.out.println("Elevator " + id + " sent update to Scheduler: " + message);
     }
 
+    public void notifyLoading() throws Exception {
+        notifyScheduler("Loading " + id);
+    }
+
+    public void notifyUnloading() throws Exception {
+        notifyScheduler("Unloading " + id);
+    }
+
     public void readyToCloseDoors() throws Exception {
         notifyScheduler("ReadyToCloseDoors " + id);
     }
 
-    private void handleAction(String message) {
+    private void handleAction(String message) throws Exception {
         String[] parts = message.split(" ");
         String newState = parts[1];
 
@@ -95,12 +103,14 @@ public class Elevator implements Runnable{
                 closeDoors();
                 break;
             case "LOADING":
+                notifyLoading();
                 setState(new ElevatorLoadingPassengers());
                 break;
             case "MOVING":
                 moveElevator();
                 break;
             case "UNLOADING":
+                notifyUnloading();
                 setState(new ElevatorUnloadingPassengers());
                 break;
         }
@@ -153,7 +163,7 @@ public class Elevator implements Runnable{
      * Displays current elevator state
      */
     public void displayState() {
-       state.displayState(this);
+        state.displayState(this);
     }
 
     /**

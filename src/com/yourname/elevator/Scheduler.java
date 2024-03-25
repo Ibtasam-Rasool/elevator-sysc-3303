@@ -77,6 +77,18 @@ public class Scheduler implements Runnable {
         if(received.contains("ReadyToCloseDoors")){
             handleReadyToCloseDoors(received);
         }
+        if(received.contains("Loading")){
+            String[] parts = received.split(" ");
+            int elevatorId = Integer.parseInt(parts[1]);
+            ElevatorStatus elevatorToLoad = availableElevators.get(elevatorId);
+            elevatorToLoad.addLoad();
+        }
+        if(received.contains("Unloading")){
+            String[] parts = received.split(" ");
+            int elevatorId = Integer.parseInt(parts[1]);
+            ElevatorStatus elevatorToUnload = availableElevators.get(elevatorId);
+            elevatorToUnload.removeLoad();
+        }
     }
 
     private void handleReadyToCloseDoors(String received) {
@@ -129,14 +141,16 @@ public class Scheduler implements Runnable {
         while (!tasks.isEmpty() && !availableElevators.isEmpty()) {
             TaskData task = tasks.remove(0);
             ElevatorStatus nearestElevator = findNearestAvailableElevator(task.getInitialFloor());
-            if (nearestElevator != null) {
+            if (nearestElevator != null && nearestElevator.getLoad() < nearestElevator.getCapacity()) {
                 try {
                     sendTask(task.toString(), nearestElevator.getAddress(), nearestElevator.getPort());
                     sendActionCommand(nearestElevator.getId(), "MOVING");
+                    if(nearestElevator.getLoad() >= nearestElevator.getCapacity()){
+                        availableElevators.remove(nearestElevator.getId());
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                availableElevators.remove(nearestElevator.getId());
             }
         }
     }
@@ -170,18 +184,25 @@ public class Scheduler implements Runnable {
         private final InetAddress address;
         private final int port;
         private final int floor;
+        private int load;
+        private final int capacity = 5;
 
         public ElevatorStatus(int id, InetAddress address, int port, int floor) {
             this.id = id;
             this.address = address;
             this.port = port;
             this.floor = floor;
+            load = 0;
         }
 
         public int getId() { return id; }
         public InetAddress getAddress() { return address; }
         public int getPort() { return port; }
         public int getFloor() { return floor; }
+        public int getLoad() { return load; }
+        public int getCapacity() { return capacity; }
+        public void addLoad() { load += 1;}
+        public void removeLoad() { load -= 1;}
     }
 
     public void setState(SchedulerState schedulingState) {
